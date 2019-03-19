@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2FBDBA1922410BFB00EBB128 /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBDBA1822410BFB00EBB128 /* Page1ViewController.swift */; };
+		2FBC2B0F2241336700DA3AFE /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B0E2241336700DA3AFE /* Page1ViewController.swift */; };
+		2FBC2B11224133C200DA3AFE /* Page1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B10224133C200DA3AFE /* Page1.swift */; };
 		5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */; };
 		5E086DD32051E3A3004D8D25 /* Manifest.plist in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5E086DCF2051DF0F004D8D25 /* Manifest.plist */; };
 		5E3196F32061DEA40077BBD7 /* LiveViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3196F22061DEA40077BBD7 /* LiveViewSupport.swift */; };
@@ -91,7 +92,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2FBDBA1822410BFB00EBB128 /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
+		2FBC2B0E2241336700DA3AFE /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
+		2FBC2B10224133C200DA3AFE /* Page1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1.swift; sourceTree = "<group>"; };
 		5E086DC02051C5A7004D8D25 /* ThePower.playgroundbook */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThePower.playgroundbook; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E086DC72051DD03004D8D25 /* BookOverridingBuildSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BookOverridingBuildSettings.xcconfig; sourceTree = "<group>"; };
 		5E086DCD2051DDB8004D8D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LiveView.storyboard; sourceTree = "<group>"; };
@@ -134,13 +136,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2FBDBA1A22410C6E00EBB128 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		5E086DA4204F706E004D8D25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,10 +254,10 @@
 		5EF2F9A22054BB3E00191409 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2FBDBA1A22410C6E00EBB128 /* Controllers */,
+				2FBC2B0E2241336700DA3AFE /* Page1ViewController.swift */,
+				2FBC2B10224133C200DA3AFE /* Page1.swift */,
 				5EF2F9AD2054BBF300191409 /* LiveViewController.swift */,
 				5E3196F22061DEA40077BBD7 /* LiveViewSupport.swift */,
-				2FBDBA1822410BFB00EBB128 /* Page1ViewController.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -344,6 +339,7 @@
 				TargetAttributes = {
 					5E086DBF2051C5A7004D8D25 = {
 						CreatedOnToolsVersion = 9.3;
+						LastSwiftMigration = 1010;
 					};
 					5EA2E3BC2056F35A00416A35 = {
 						CreatedOnToolsVersion = 9.3;
@@ -427,8 +423,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FBC2B0F2241336700DA3AFE /* Page1ViewController.swift in Sources */,
 				5E3196F32061DEA40077BBD7 /* LiveViewSupport.swift in Sources */,
-				2FBDBA1922410BFB00EBB128 /* Page1ViewController.swift in Sources */,
+				2FBC2B11224133C200DA3AFE /* Page1.swift in Sources */,
 				5EF2F9AE2054BBF300191409 /* LiveViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -485,14 +482,22 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E086DC72051DD03004D8D25 /* BookOverridingBuildSettings.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0;
 				DEVELOPMENT_TEAM = "";
 				GCC_DYNAMIC_NO_PIC = NO;
 				INSTALL_PATH = /;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PLAYGROUND_BOOK_CONTENT_IDENTIFIER)";
 				PRODUCT_NAME = ThePower;
 				SKIP_INSTALL = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -500,12 +505,19 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 5E086DC72051DD03004D8D25 /* BookOverridingBuildSettings.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0;
 				INSTALL_PATH = /;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "$(PLAYGROUND_BOOK_CONTENT_IDENTIFIER)";
 				PRODUCT_NAME = ThePower;
 				SKIP_INSTALL = NO;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
