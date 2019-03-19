@@ -22,22 +22,17 @@ public class Page1ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
         self.scene = Page1.init(size: view.frame.size)
         scene.scaleMode = .resizeFill
         scene.backgroundColor = SKColor.clear
+        guard let scene = self.scene as? Page1 else {return}
+        scene.delegatePresenting = self
+        scene.delegateImage = InformationViewController()
         skviewPage1.ignoresSiblingOrder = true
         skviewPage1.showsFPS = false
         skviewPage1.showsNodeCount = false
         skviewPage1.showsPhysics = false
+        setupConstraints()
         skviewPage1.presentScene(self.scene)
     }
-    
-//    private func skviewConstraints(){
-//        skviewPage1.translatesAutoresizingMaskIntoConstraints = false
-//        if let superview = skviewPage1.superview{
-//            skviewPage1.topAnchor.constraint(equalTo: superview.topAnchor).isActive = true
-//            skviewPage1.bottomAnchor.constraint(equalTo: superview.bottomAnchor).isActive = true
-//            skviewPage1.leadingAnchor.constraint(equalTo: superview.leadingAnchor).isActive = true
-//            skviewPage1.rightAnchor.constraint(equalTo: superview.rightAnchor).isActive = true
-//        }
-//    }
+
     
     override public func viewDidLayoutSubviews() {
         skviewPage1.center = self.view.center
@@ -47,10 +42,14 @@ public class Page1ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
                 scene.updatePosition()
             }
         }
-        
     }
     
-    
+    private func setupConstraints(){
+        skviewPage1.topAnchor.constraint(equalTo: liveViewSafeAreaGuide.topAnchor).isActive = true
+        skviewPage1.bottomAnchor.constraint(equalTo: liveViewSafeAreaGuide.bottomAnchor).isActive = true
+        skviewPage1.leadingAnchor.constraint(equalTo: liveViewSafeAreaGuide.leadingAnchor).isActive = true
+        skviewPage1.trailingAnchor.constraint(equalTo: liveViewSafeAreaGuide.trailingAnchor).isActive = true
+    }
     
     /*
      // MARK: - Navigation
@@ -62,4 +61,15 @@ public class Page1ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
      }
      */
     
+}
+
+extension Page1ViewController: PresentingProtocol{
+    
+    public func present(viewController: UIViewController) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    public func dismiss(viewController: UIViewController) {
+        viewController.dismiss(animated: true, completion: nil)
+    }
 }

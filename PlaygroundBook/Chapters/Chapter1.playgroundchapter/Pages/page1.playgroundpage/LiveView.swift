@@ -20,5 +20,5 @@ import SpriteKit
 import PlaygroundSupport
 
 
-PlaygroundPage.current.liveView = Page1ViewController(sceneName: "Page1")
+PlaygroundPage.current.liveView = Page1ViewController()
 

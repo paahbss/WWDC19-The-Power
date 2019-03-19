@@ -15,6 +15,8 @@ public class Page1: SKScene {
     let numPeopleRow = 2
     let margin: CGFloat = 20
     let spacingBetween: CGFloat = 40
+    var delegatePresenting: PresentingProtocol!
+    var delegateImage: ImageProtocol!
     
     
     override public func didMove(to view: SKView) {
@@ -30,12 +32,16 @@ public class Page1: SKScene {
         let heightNode = (heightView - (2*margin) - (spacingBetween * CGFloat(numPeopleRow-1)))/CGFloat(numPeopleRow)
         
         let nodeSize = CGSize(width: widthNode, height: heightNode)
-        
+        var texture = SKTexture()
+        var textureCount = numPeopleCol * numPeopleRow
         for i in 0..<numPeopleCol{
             for j in 0..<numPeopleRow{
                 let nodeRemoved = peopleNodes[i][j]
                 nodeRemoved.removeFromParent()
-                let node = SKSpriteNode(color: .blue, size: nodeSize)
+                texture = SKTexture(imageNamed: "people\(textureCount)")
+                textureCount -= 1
+                let node = SKSpriteNode(texture: texture, size: nodeSize)
+                //let node = SKSpriteNode(color: .blue, size: nodeSize)
                 let x = margin + nodeSize.width * CGFloat(i) + spacingBetween * CGFloat(i)
                 let y = -(margin + nodeSize.height * CGFloat(j) + spacingBetween * CGFloat(j))
                 node.position = CGPoint(x: x, y: y)
@@ -47,10 +53,6 @@ public class Page1: SKScene {
     }
     
     private func peopleSetup(){
-        //        let numPeopleCol = 2
-        //        let numPeopleRow = 2
-        //        let margin: CGFloat = 20
-        //        let spacingBetween: CGFloat = 40
         
         guard let widthView = self.view?.frame.width, let heightView = self.view?.frame.height else {return}
         
@@ -59,11 +61,17 @@ public class Page1: SKScene {
         
         let frameSize = CGSize(width: widthNode, height: heightNode)
         
+        var texture = SKTexture()
+        var textureCount = numPeopleCol * numPeopleRow
+        
         for i in 0..<numPeopleCol{
             peopleNodes.append([])
             for j in 0..<numPeopleRow{
                 peopleNodes[i].append(SKSpriteNode())
-                let node = SKSpriteNode(color: .blue, size: frameSize)
+                texture = SKTexture(imageNamed: "people\(textureCount)")
+                textureCount -= 1
+                let node = SKSpriteNode(texture: texture, size: frameSize)
+                //let node = SKSpriteNode(color: .blue, size: frameSize)
                 let x = margin + frameSize.width * CGFloat(i) + spacingBetween * CGFloat(i)
                 let y = -(margin + frameSize.height * CGFloat(j) + spacingBetween * CGFloat(j))
                 node.position = CGPoint(x: x, y: y)
@@ -71,22 +79,17 @@ public class Page1: SKScene {
                 addChild(node)
                 peopleNodes[i][j] = node
             }
-            //let texture = SKTexture(imageNamed: "people\(i)")
-            //let node = SKSpriteNode(texture: texture)
-            //            let node = SKSpriteNode(color: .blue, size: frameSize)
-            //            let x = margin + frameSize.width * CGFloat(i)
-            //            let y = margin + frameSize.height * CGFloat(i)
-            //            node.position = CGPoint(x: x, y: y)
-            //            node.anchorPoint = CGPoint(x: 0, y: 1)
-            //            addChild(node)
-            //            peopleNodes.append(node)
-            //node.size = frameSize
-            
         }
     }
     
-    private func handle(touch: UITouch){
-        
+    private func handle(touch: UITouch, inNode node: SKSpriteNode){
+        let information = InformationViewController()
+        information.modalPresentationStyle = .custom
+        guard let cgImageTouched = node.texture?.cgImage() else {return}
+        information.image.image = UIImage(cgImage: cgImageTouched)
+        //information.informationLabel.text = 
+        delegatePresenting.present(viewController: information)
+        //delegateImage.imageTouched(cgImage: cgImageTouched)
         
     }
     
@@ -97,7 +100,7 @@ public class Page1: SKScene {
             peopleNodes.forEach { (nodeRow) in
                 nodeRow.forEach({ (node) in
                     if node == nodeTouched{
-                        handle(touch: touch)
+                        handle(touch: touch, inNode: node)
                     }
                 })
             }
