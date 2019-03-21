@@ -16,15 +16,7 @@ public class Page1ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         self.skviewPage1 = SKView(frame: view.frame)
-//        NSLayoutConstraint.activate([
-//            skviewPage1.bottomAnchor.constraint(equalTo: liveViewSafeAreaGuide.bottomAnchor),
-//            skviewPage1.topAnchor.constraint(equalTo: liveViewSafeAreaGuide.topAnchor),
-//            skviewPage1.leadingAnchor.constraint(equalTo: liveViewSafeAreaGuide.leadingAnchor),
-//            skviewPage1.trailingAnchor.constraint(equalTo: liveViewSafeAreaGuide.trailingAnchor)
-//            ])
         view.addSubview(skviewPage1)
         view.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
         self.scene = Page1.init(size: view.frame.size)

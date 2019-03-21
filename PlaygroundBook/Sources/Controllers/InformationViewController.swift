@@ -10,8 +10,8 @@ import PlaygroundSupport
 
 public class InformationViewController: UIViewController, PlaygroundLiveViewSafeAreaContainer {
     
-    let hugsName = ["Bear Hug", "Hug From Behind", "Side Hug", "Hug of Hearts Together"]
-    let information = ["That hug that shows the affection and closeness of those who started the embrace", "That embrace given on the beloved person to demonstrate that she is safe and protected in our arms", "When we give that hug very quickly in the person who is on the side", "When you lean on the other person's chest asking for support in times of sadness and stress"]
+    let hugsName: [Int: String] = [2: "Bear Hug", 3: "Hug From Behind", 1: "Side Hug", 0: "Hug of Hearts Together"]
+    let information = [2: "That hug that shows the affection and closeness of those who started the embrace", 3: "That embrace given on the beloved person to demonstrate that she is safe and protected in our arms", 1: "When we give that hug very quickly in the person who is on the side", 0: "When you lean on the other person's chest asking for support in times of sadness and stress"]
     
     let image: UIImageView = {
         let image = UIImageView()
