@@ -9,7 +9,7 @@ import UIKit
 import SpriteKit
 import PlaygroundSupport
 
-class Page3ViewController: UIViewController, PlaygroundLiveViewSafeAreaContainer {
+public class Page3ViewController: UIViewController, PlaygroundLiveViewSafeAreaContainer {
 
     
     private lazy var pulse: Pulsing = {
@@ -21,28 +21,38 @@ class Page3ViewController: UIViewController, PlaygroundLiveViewSafeAreaContainer
     
     private lazy var imageHugging: UIImageView = {
        let image = UIImageView()
-        image.translatesAutoresizingMaskIntoConstraints = true
+        image.image = UIImage(named: "people3")
+        image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleAspectFit
         return image
+    }()
+    
+    private lazy var contentView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
 
     
     override public func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(imageHugging)
+        view.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
+        self.contentView.addSubview(imageHugging)
+        view.addSubview(contentView)
         setupConstraints()
         
     }
     
-    
-    override public func viewDidLayoutSubviews() {
-      
-    }
-    
     private func setupConstraints(){
-        imageHugging.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        imageHugging.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        imageHugging.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.4).isActive = true
+        contentView.topAnchor.constraint(equalTo: liveViewSafeAreaGuide.topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: liveViewSafeAreaGuide.bottomAnchor).isActive = true
+        contentView.leadingAnchor.constraint(equalTo: liveViewSafeAreaGuide.leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: liveViewSafeAreaGuide.trailingAnchor).isActive = true
+        imageHugging.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
+        imageHugging.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
+        imageHugging.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.5).isActive = true
+        imageHugging.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.5).isActive = true
         
     }
     

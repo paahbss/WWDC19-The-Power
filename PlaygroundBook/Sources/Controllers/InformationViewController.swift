@@ -71,6 +71,7 @@ public class InformationViewController: UIViewController, PlaygroundLiveViewSafe
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissGestutre))
         swipe.direction = .down
         self.view.addGestureRecognizer(swipe)
+        arrowDown.addGestureRecognizer(tap)
         view.addSubview(swipeDownLabel)
         view.addSubview(titleHug)
         view.addSubview(informationHug)
