@@ -16,27 +16,35 @@ public class Page1ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
     
     override public func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         self.skviewPage1 = SKView(frame: view.frame)
-        view = skviewPage1
-        view.backgroundColor = .clear
+//        NSLayoutConstraint.activate([
+//            skviewPage1.bottomAnchor.constraint(equalTo: liveViewSafeAreaGuide.bottomAnchor),
+//            skviewPage1.topAnchor.constraint(equalTo: liveViewSafeAreaGuide.topAnchor),
+//            skviewPage1.leadingAnchor.constraint(equalTo: liveViewSafeAreaGuide.leadingAnchor),
+//            skviewPage1.trailingAnchor.constraint(equalTo: liveViewSafeAreaGuide.trailingAnchor)
+//            ])
+        view.addSubview(skviewPage1)
+        view.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
         self.scene = Page1.init(size: view.frame.size)
         scene.scaleMode = .resizeFill
-        scene.backgroundColor = SKColor.clear
+        scene.backgroundColor = SKColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
         guard let scene = self.scene as? Page1 else {return}
         scene.delegatePresenting = self
-        scene.delegateImage = InformationViewController()
         skviewPage1.ignoresSiblingOrder = true
         skviewPage1.showsFPS = false
         skviewPage1.showsNodeCount = false
         skviewPage1.showsPhysics = false
-        setupConstraints()
+        //setupConstraints()
         skviewPage1.presentScene(self.scene)
+        
     }
 
     
     override public func viewDidLayoutSubviews() {
-        skviewPage1.center = self.view.center
-        skviewPage1.frame = self.view.frame
+        skviewPage1.center = PlaygroundCenterHelper.getPlaygroundViewCenterPoint()
+        skviewPage1.frame = self.liveViewSafeAreaGuide.layoutFrame
         if self.view.frame != CGRect.zero{
             if let scene = self.scene as? Page1 {
                 scene.updatePosition()

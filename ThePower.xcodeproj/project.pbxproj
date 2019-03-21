@@ -11,11 +11,21 @@
 		2FBC2B11224133C200DA3AFE /* Page1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B10224133C200DA3AFE /* Page1.swift */; };
 		2FBC2B1822418AD500DA3AFE /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B1722418AD500DA3AFE /* InformationViewController.swift */; };
 		2FBC2B1A22418B2900DA3AFE /* PresentingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B1922418B2900DA3AFE /* PresentingProtocol.swift */; };
-		2FBC2B2022418EBA00DA3AFE /* people4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B1C22418EBA00DA3AFE /* people4.png */; };
-		2FBC2B2122418EBA00DA3AFE /* people1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B1D22418EBA00DA3AFE /* people1.png */; };
-		2FBC2B2222418EBA00DA3AFE /* people3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B1E22418EBA00DA3AFE /* people3.png */; };
-		2FBC2B2322418EBA00DA3AFE /* people2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B1F22418EBA00DA3AFE /* people2.png */; };
 		2FBC2B25224192BE00DA3AFE /* ImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B24224192BE00DA3AFE /* ImageProtocol.swift */; };
+		2FBC2B292241AE5E00DA3AFE /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B282241AE5E00DA3AFE /* arrow.png */; };
+		2FBC2B2F2241B8CE00DA3AFE /* PlaygroundHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B2E2241B8CE00DA3AFE /* PlaygroundHelper.swift */; };
+		2FBC2B312243BF9300DA3AFE /* people0.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B302243BF9300DA3AFE /* people0.png */; };
+		2FBC2B352243DCA300DA3AFE /* people1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B332243DCA300DA3AFE /* people1.png */; };
+		2FBC2B372243DCC100DA3AFE /* people3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B362243DCC100DA3AFE /* people3.png */; };
+		2FBC2B3B22440C2300DA3AFE /* people0b.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B3A22440C2300DA3AFE /* people0b.png */; };
+		2FBC2B3F22440C3400DA3AFE /* people3b.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B3C22440C3400DA3AFE /* people3b.png */; };
+		2FBC2B4022440C3400DA3AFE /* people2b.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B3D22440C3400DA3AFE /* people2b.png */; };
+		2FBC2B4122440C3400DA3AFE /* people1b.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B3E22440C3400DA3AFE /* people1b.png */; };
+		2FBC2B432244149500DA3AFE /* people2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B422244149400DA3AFE /* people2.png */; };
+		2FBC2B4B224418B600DA3AFE /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B4A224418B600DA3AFE /* first.png */; };
+		2FBC2B4C224418B600DA3AFE /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B4A224418B600DA3AFE /* first.png */; };
+		2FBC2B4E2244247200DA3AFE /* BalooChettan-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B4D2244212000DA3AFE /* BalooChettan-Regular.ttf */; };
+		2FBC2B4F2244247400DA3AFE /* BalooChettan-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B4D2244212000DA3AFE /* BalooChettan-Regular.ttf */; };
 		5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */; };
 		5E086DD32051E3A3004D8D25 /* Manifest.plist in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5E086DCF2051DF0F004D8D25 /* Manifest.plist */; };
 		5E3196F32061DEA40077BBD7 /* LiveViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3196F22061DEA40077BBD7 /* LiveViewSupport.swift */; };
@@ -103,11 +113,19 @@
 		2FBC2B10224133C200DA3AFE /* Page1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1.swift; sourceTree = "<group>"; };
 		2FBC2B1722418AD500DA3AFE /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		2FBC2B1922418B2900DA3AFE /* PresentingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingProtocol.swift; sourceTree = "<group>"; };
-		2FBC2B1C22418EBA00DA3AFE /* people4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people4.png; sourceTree = "<group>"; };
-		2FBC2B1D22418EBA00DA3AFE /* people1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people1.png; sourceTree = "<group>"; };
-		2FBC2B1E22418EBA00DA3AFE /* people3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people3.png; sourceTree = "<group>"; };
-		2FBC2B1F22418EBA00DA3AFE /* people2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people2.png; sourceTree = "<group>"; };
 		2FBC2B24224192BE00DA3AFE /* ImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageProtocol.swift; sourceTree = "<group>"; };
+		2FBC2B282241AE5E00DA3AFE /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		2FBC2B2E2241B8CE00DA3AFE /* PlaygroundHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundHelper.swift; sourceTree = "<group>"; };
+		2FBC2B302243BF9300DA3AFE /* people0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people0.png; sourceTree = "<group>"; };
+		2FBC2B332243DCA300DA3AFE /* people1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people1.png; sourceTree = "<group>"; };
+		2FBC2B362243DCC100DA3AFE /* people3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people3.png; sourceTree = "<group>"; };
+		2FBC2B3A22440C2300DA3AFE /* people0b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people0b.png; sourceTree = "<group>"; };
+		2FBC2B3C22440C3400DA3AFE /* people3b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people3b.png; sourceTree = "<group>"; };
+		2FBC2B3D22440C3400DA3AFE /* people2b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people2b.png; sourceTree = "<group>"; };
+		2FBC2B3E22440C3400DA3AFE /* people1b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people1b.png; sourceTree = "<group>"; };
+		2FBC2B422244149400DA3AFE /* people2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people2.png; sourceTree = "<group>"; };
+		2FBC2B4A224418B600DA3AFE /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		2FBC2B4D2244212000DA3AFE /* BalooChettan-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooChettan-Regular.ttf"; sourceTree = "<group>"; };
 		5E086DC02051C5A7004D8D25 /* ThePower.playgroundbook */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThePower.playgroundbook; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E086DC72051DD03004D8D25 /* BookOverridingBuildSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BookOverridingBuildSettings.xcconfig; sourceTree = "<group>"; };
 		5E086DCD2051DDB8004D8D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LiveView.storyboard; sourceTree = "<group>"; };
@@ -150,6 +168,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FBC2B2A2241AEF600DA3AFE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2FBC2B1722418AD500DA3AFE /* InformationViewController.swift */,
+				2FBC2B0E2241336700DA3AFE /* Page1ViewController.swift */,
+				2FBC2B2E2241B8CE00DA3AFE /* PlaygroundHelper.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2FBC2B2B2241AF0600DA3AFE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				2FBC2B10224133C200DA3AFE /* Page1.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		2FBC2B2C2241AF1800DA3AFE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				2FBC2B1922418B2900DA3AFE /* PresentingProtocol.swift */,
+				2FBC2B24224192BE00DA3AFE /* ImageProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		2FBC2B2D2241AF2600DA3AFE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2FBC2B4A224418B600DA3AFE /* first.png */,
+				2FBC2B3A22440C2300DA3AFE /* people0b.png */,
+				2FBC2B302243BF9300DA3AFE /* people0.png */,
+				2FBC2B3D22440C3400DA3AFE /* people2b.png */,
+				2FBC2B3E22440C3400DA3AFE /* people1b.png */,
+				2FBC2B3C22440C3400DA3AFE /* people3b.png */,
+				2FBC2B332243DCA300DA3AFE /* people1.png */,
+				2FBC2B422244149400DA3AFE /* people2.png */,
+				2FBC2B362243DCC100DA3AFE /* people3.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		5E086DA4204F706E004D8D25 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +320,7 @@
 		5EF2F9792054B64800191409 /* PrivateResources */ = {
 			isa = PBXGroup;
 			children = (
+				2FBC2B282241AE5E00DA3AFE /* arrow.png */,
 				5EF2F97E2054B6E400191409 /* ManifestPlist.strings */,
 				5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */,
 			);
@@ -268,17 +330,13 @@
 		5EF2F9A22054BB3E00191409 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2FBC2B1D22418EBA00DA3AFE /* people1.png */,
-				2FBC2B1F22418EBA00DA3AFE /* people2.png */,
-				2FBC2B1E22418EBA00DA3AFE /* people3.png */,
-				2FBC2B1C22418EBA00DA3AFE /* people4.png */,
-				2FBC2B0E2241336700DA3AFE /* Page1ViewController.swift */,
-				2FBC2B10224133C200DA3AFE /* Page1.swift */,
+				2FBC2B4D2244212000DA3AFE /* BalooChettan-Regular.ttf */,
+				2FBC2B2D2241AF2600DA3AFE /* Resources */,
+				2FBC2B2C2241AF1800DA3AFE /* Protocols */,
+				2FBC2B2B2241AF0600DA3AFE /* Scenes */,
+				2FBC2B2A2241AEF600DA3AFE /* Controllers */,
 				5EF2F9AD2054BBF300191409 /* LiveViewController.swift */,
 				5E3196F22061DEA40077BBD7 /* LiveViewSupport.swift */,
-				2FBC2B1722418AD500DA3AFE /* InformationViewController.swift */,
-				2FBC2B1922418B2900DA3AFE /* PresentingProtocol.swift */,
-				2FBC2B24224192BE00DA3AFE /* ImageProtocol.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -397,12 +455,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FBC2B2222418EBA00DA3AFE /* people3.png in Resources */,
-				2FBC2B2122418EBA00DA3AFE /* people1.png in Resources */,
+				2FBC2B4F2244247400DA3AFE /* BalooChettan-Regular.ttf in Resources */,
+				2FBC2B312243BF9300DA3AFE /* people0.png in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
+				2FBC2B3B22440C2300DA3AFE /* people0b.png in Resources */,
+				2FBC2B372243DCC100DA3AFE /* people3.png in Resources */,
 				5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */,
-				2FBC2B2022418EBA00DA3AFE /* people4.png in Resources */,
-				2FBC2B2322418EBA00DA3AFE /* people2.png in Resources */,
+				2FBC2B292241AE5E00DA3AFE /* arrow.png in Resources */,
+				2FBC2B4B224418B600DA3AFE /* first.png in Resources */,
+				2FBC2B3F22440C3400DA3AFE /* people3b.png in Resources */,
+				2FBC2B432244149500DA3AFE /* people2.png in Resources */,
+				2FBC2B4022440C3400DA3AFE /* people2b.png in Resources */,
+				2FBC2B352243DCA300DA3AFE /* people1.png in Resources */,
+				2FBC2B4122440C3400DA3AFE /* people1b.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -410,6 +475,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FBC2B4C224418B600DA3AFE /* first.png in Resources */,
+				2FBC2B4E2244247200DA3AFE /* BalooChettan-Regular.ttf in Resources */,
 				5EA2E3CA2056F35B00416A35 /* LiveViewTestAppLaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -454,6 +521,7 @@
 				2FBC2B11224133C200DA3AFE /* Page1.swift in Sources */,
 				5EF2F9AE2054BBF300191409 /* LiveViewController.swift in Sources */,
 				2FBC2B1A22418B2900DA3AFE /* PresentingProtocol.swift in Sources */,
+				2FBC2B2F2241B8CE00DA3AFE /* PlaygroundHelper.swift in Sources */,
 				2FBC2B1822418AD500DA3AFE /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -536,6 +604,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1.0;
+				DEVELOPMENT_TEAM = "";
 				INSTALL_PATH = /;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

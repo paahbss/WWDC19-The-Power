@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>Name</key>
-	<string>cutscene</string>
+	<string>Introduction</string>
 	<key>Version</key>
 	<string>1.0</string>
 	<key>CutsceneReference</key>
