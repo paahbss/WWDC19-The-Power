@@ -15,6 +15,7 @@
 		2F6668D62245200F00741D66 /* Page5Cont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6668D52245200F00741D66 /* Page5Cont.swift */; };
 		2F6668D82245201F00741D66 /* Page4Cont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6668D72245201F00741D66 /* Page4Cont.swift */; };
 		2F6668DA2245203900741D66 /* Page2Cont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6668D92245203900741D66 /* Page2Cont.swift */; };
+		2F6668DC224571BB00741D66 /* ColorComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F6668DB224571BB00741D66 /* ColorComponents.swift */; };
 		2FBC2B0F2241336700DA3AFE /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B0E2241336700DA3AFE /* Page1ViewController.swift */; };
 		2FBC2B11224133C200DA3AFE /* Page1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B10224133C200DA3AFE /* Page1.swift */; };
 		2FBC2B1822418AD500DA3AFE /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B1722418AD500DA3AFE /* InformationViewController.swift */; };
@@ -134,6 +135,7 @@
 		2F6668D52245200F00741D66 /* Page5Cont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page5Cont.swift; sourceTree = "<group>"; };
 		2F6668D72245201F00741D66 /* Page4Cont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page4Cont.swift; sourceTree = "<group>"; };
 		2F6668D92245203900741D66 /* Page2Cont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page2Cont.swift; sourceTree = "<group>"; };
+		2F6668DB224571BB00741D66 /* ColorComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorComponents.swift; sourceTree = "<group>"; };
 		2FBC2B0E2241336700DA3AFE /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
 		2FBC2B10224133C200DA3AFE /* Page1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1.swift; sourceTree = "<group>"; };
 		2FBC2B1722418AD500DA3AFE /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 			isa = PBXGroup;
 			children = (
 				2FBC2B5322443F3800DA3AFE /* Pulsing.swift */,
+				2F6668DB224571BB00741D66 /* ColorComponents.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				5EF2F9AE2054BBF300191409 /* LiveViewController.swift in Sources */,
 				2FBC2B1A22418B2900DA3AFE /* PresentingProtocol.swift in Sources */,
 				2FE3960822444EEF00D5AFBA /* Page4ViewController.swift in Sources */,
+				2F6668DC224571BB00741D66 /* ColorComponents.swift in Sources */,
 				2FBC2B2F2241B8CE00DA3AFE /* PlaygroundHelper.swift in Sources */,
 				2FBC2B1822418AD500DA3AFE /* InformationViewController.swift in Sources */,
 			);

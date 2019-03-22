@@ -13,7 +13,7 @@ public class Page2ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
     
     var skviewPage2: SKView!
     var scene: SKScene!
-
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
@@ -29,7 +29,6 @@ public class Page2ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
         skviewPage2.showsNodeCount = false
         skviewPage2.showsPhysics = false
         skviewPage2.presentScene(self.scene)
-
     }
     
     override public func viewDidLayoutSubviews() {
@@ -39,17 +38,23 @@ public class Page2ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
             if let scene = self.scene as? Page2 {
                 scene.updatePosition()
             }
+            if let scene = self.scene as? Page2Cont {
+                scene.updatePosition()
+            }
+                
         }
     }
-
+    
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+                guard let scene = self.scene as? Page2 else {return}
+                scene.gotoHeart()
+    }
 }
 
 extension Page2ViewController: PlaygroundLiveViewMessageHandler{
     
     public func receive(_ message: PlaygroundValue) {
-        NSLog("receved")
         guard case let .string(gotoHeart) = message else { return }
-        
         if gotoHeart == "gotoHeart" {
             guard let scene = self.scene as? Page2 else {return}
             scene.gotoHeart()
@@ -68,6 +73,7 @@ extension Page2ViewController: PresentingProtocol {
     
     public func changeTo(scene: SKScene) {
         skviewPage2.presentScene(scene)
+        self.scene = scene
     }
 }
 

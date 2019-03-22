@@ -23,29 +23,26 @@ class Page2: SKScene {
     func updatePosition(){
         nodeImage.removeFromParent()
         let textute = SKTexture(imageNamed: "people1")
-        guard let viewWidth = view?.frame.width, let viewHeight = view?.frame.height else {return}
-        var size = CGSize.zero
-        if viewHeight > viewHeight {
-            size = CGSize(width: viewWidth * 0.4, height: viewHeight * 0.45)
-        }else{
-            size = CGSize(width: viewWidth * 0.4, height: viewHeight * 0.3)
-        }
-        size = CGSize(width: viewWidth * 0.4, height: viewHeight * 0.45)
+        guard let size = self.getSize() else {return}
         self.nodeImage = SKSpriteNode(texture: textute, size: size)
         self.nodeImage .position = CGPoint(x: 0, y: 0)
         self.addChild(nodeImage)
     }
     
+    private func getSize() -> CGSize? {
+        guard let viewWidth = view?.frame.width, let viewHeight = view?.frame.height else {return nil}
+        var size = CGSize.zero
+        if viewHeight > viewWidth {
+            size = CGSize(width: (viewWidth * 0.6), height: (viewHeight * 0.5))
+        }else{
+            size = CGSize(width: (viewWidth * 0.2), height: (viewHeight * 0.7))
+        }
+        return size
+    }
+    
     private func initalSetup(){
         let textute = SKTexture(imageNamed: "people1")
-        guard let viewWidth = view?.frame.width, let viewHeight = view?.frame.height else {return}
-        var size = CGSize.zero
-        if viewHeight > viewHeight {
-            size = CGSize(width: viewWidth * 0.7, height: viewHeight * 0.6)
-        }else{
-            size = CGSize(width: viewWidth * 0.4, height: viewHeight * 0.3)
-        }
-        size = CGSize(width: viewWidth * 0.4, height: viewHeight * 0.45)
+        guard let size = self.getSize() else {return}
         self.nodeImage = SKSpriteNode(texture: textute, size: size)
         self.nodeImage .position = CGPoint(x: 0, y: 0)
         self.addChild(nodeImage)
@@ -57,15 +54,16 @@ class Page2: SKScene {
     
     func gotoHeart(){
         let zoomInAction = SKAction.repeatForever(SKAction.scale(by: 0.4, duration: 1))
-        let moveByX = SKAction.moveTo(x: nodeImage.frame.midX, duration: 1)
-        let moveByY = SKAction.moveTo(y: nodeImage.frame.midY - CGFloat(20), duration: 1)
+        let moveByX = SKAction.moveTo(x: nodeImage.frame.midX + CGFloat(40), duration: 1)
+        let moveByY = SKAction.moveTo(y: nodeImage.frame.midY - CGFloat(60), duration: 1)
         cameraNode.run(SKAction.group([moveByX, moveByY, zoomInAction ]))
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.7) {
             let scene = Page2Cont.init(size: self.size)
-            scene.backgroundColor = SKColor(red: 99/255, green: 18/255, blue: 4/255, alpha: 1)
+            scene.backgroundColor = SKColor.white
             guard let skview = self.view else {return}
-            skview.backgroundColor = SKColor(red: 99/255, green: 18/255, blue: 4/255, alpha: 1)
+            
+            skview.backgroundColor = SKColor.white
             self.delegatePresenting.changeTo(scene: scene)
         }
     }

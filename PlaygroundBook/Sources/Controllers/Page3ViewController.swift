@@ -40,7 +40,7 @@ public class Page3ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
             }
         }
     }
-    
+//    
 //    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        guard let scene = self.scene as? Page3 else {return}
 //        scene.gotoBrain()
@@ -71,6 +71,4 @@ extension Page3ViewController: PresentingProtocol {
     public func changeTo(scene: SKScene) {
         skviewPage3.presentScene(scene)
     }
-    
-    
 }
