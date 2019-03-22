@@ -9,18 +9,18 @@ import UIKit
 import SpriteKit
 import PlaygroundSupport
 
-class Page2ViewController: UIViewController {
+public class Page2ViewController: UIViewController, PlaygroundLiveViewSafeAreaContainer {
     
     var skviewPage2: SKView!
     var scene: SKScene!
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
         self.skviewPage2 = SKView(frame: view.frame)
         view.addSubview(skviewPage2)
         self.scene = Page2.init(size: view.frame.size)
-        guard let scene2 = self.scene as? Page3 else {return}
+        guard let scene2 = self.scene as? Page2 else {return}
         scene2.delegatePresenting = self
         scene.scaleMode = .resizeFill
         scene.backgroundColor = SKColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
@@ -32,22 +32,22 @@ class Page2ViewController: UIViewController {
 
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override public func viewDidLayoutSubviews() {
+        skviewPage2.center = PlaygroundCenterHelper.getPlaygroundViewCenterPoint()
+        skviewPage2.frame = self.liveViewSafeAreaGuide.layoutFrame
+        if self.view.frame != CGRect.zero{
+            if let scene = self.scene as? Page2 {
+                scene.updatePosition()
+            }
+        }
     }
-    */
 
 }
 
 extension Page2ViewController: PlaygroundLiveViewMessageHandler{
     
     public func receive(_ message: PlaygroundValue) {
+        NSLog("receved")
         guard case let .string(gotoHeart) = message else { return }
         
         if gotoHeart == "gotoHeart" {

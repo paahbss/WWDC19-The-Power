@@ -23,7 +23,7 @@ public class Page3: SKScene {
     
     func updatePosition(){
         nodeImage.removeFromParent()
-        let textute = SKTexture(imageNamed: "people3")
+        let textute = SKTexture(imageNamed: "people2")
         guard let viewWidth = view?.frame.width, let viewHeight = view?.frame.height else {return}
         var size = CGSize.zero
         if viewHeight > viewHeight {
@@ -38,7 +38,7 @@ public class Page3: SKScene {
     }
     
     private func initalSetup(){
-        let textute = SKTexture(imageNamed: "brain")
+        let textute = SKTexture(imageNamed: "people2")
         guard let viewWidth = view?.frame.width, let viewHeight = view?.frame.height else {return}
         var size = CGSize.zero
         if viewHeight > viewHeight {
@@ -58,7 +58,7 @@ public class Page3: SKScene {
     
     func gotoBrain(){
         let zoomInAction = SKAction.repeatForever(SKAction.scale(by: 0.4, duration: 1))
-        let moveByX = SKAction.moveTo(x: nodeImage.frame.midX, duration: 1)
+        let moveByX = SKAction.moveTo(x: nodeImage.frame.midX - CGFloat(20), duration: 1)
         let moveByY = SKAction.moveTo(y: nodeImage.frame.maxY - CGFloat(20), duration: 1)
         cameraNode.run(SKAction.group([moveByX, moveByY, zoomInAction ]))
         

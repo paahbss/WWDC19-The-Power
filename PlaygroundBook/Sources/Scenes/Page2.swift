@@ -20,24 +20,24 @@ class Page2: SKScene {
     }
     
     
-//    func updatePosition(){
-//        nodeImage.removeFromParent()
-//        let textute = SKTexture(imageNamed: "people3")
-//        guard let viewWidth = view?.frame.width, let viewHeight = view?.frame.height else {return}
-//        var size = CGSize.zero
-//        if viewHeight > viewHeight {
-//            size = CGSize(width: viewWidth * 0.4, height: viewHeight * 0.45)
-//        }else{
-//            size = CGSize(width: viewWidth * 0.4, height: viewHeight * 0.3)
-//        }
-//        size = CGSize(width: viewWidth * 0.4, height: viewHeight * 0.45)
-//        self.nodeImage = SKSpriteNode(texture: textute, size: size)
-//        self.nodeImage .position = CGPoint(x: 0, y: 0)
-//        self.addChild(nodeImage)
-//    }
+    func updatePosition(){
+        nodeImage.removeFromParent()
+        let textute = SKTexture(imageNamed: "people1")
+        guard let viewWidth = view?.frame.width, let viewHeight = view?.frame.height else {return}
+        var size = CGSize.zero
+        if viewHeight > viewHeight {
+            size = CGSize(width: viewWidth * 0.4, height: viewHeight * 0.45)
+        }else{
+            size = CGSize(width: viewWidth * 0.4, height: viewHeight * 0.3)
+        }
+        size = CGSize(width: viewWidth * 0.4, height: viewHeight * 0.45)
+        self.nodeImage = SKSpriteNode(texture: textute, size: size)
+        self.nodeImage .position = CGPoint(x: 0, y: 0)
+        self.addChild(nodeImage)
+    }
     
     private func initalSetup(){
-        let textute = SKTexture(imageNamed: "heart")
+        let textute = SKTexture(imageNamed: "people1")
         guard let viewWidth = view?.frame.width, let viewHeight = view?.frame.height else {return}
         var size = CGSize.zero
         if viewHeight > viewHeight {
@@ -58,7 +58,7 @@ class Page2: SKScene {
     func gotoHeart(){
         let zoomInAction = SKAction.repeatForever(SKAction.scale(by: 0.4, duration: 1))
         let moveByX = SKAction.moveTo(x: nodeImage.frame.midX, duration: 1)
-        let moveByY = SKAction.moveTo(y: nodeImage.frame.maxY - CGFloat(20), duration: 1)
+        let moveByY = SKAction.moveTo(y: nodeImage.frame.midY - CGFloat(20), duration: 1)
         cameraNode.run(SKAction.group([moveByX, moveByY, zoomInAction ]))
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {

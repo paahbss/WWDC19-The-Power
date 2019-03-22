@@ -9,12 +9,12 @@ import UIKit
 import SpriteKit
 import PlaygroundSupport
 
-class Page4ViewController: UIViewController {
+public class Page4ViewController: UIViewController, PlaygroundLiveViewSafeAreaContainer {
     
     var skviewPage4: SKView!
     var scene: SKScene!
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         view.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
@@ -31,18 +31,16 @@ class Page4ViewController: UIViewController {
         skviewPage4.showsPhysics = false
         skviewPage4.presentScene(self.scene)
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override public func viewDidLayoutSubviews() {
+        skviewPage4.center = PlaygroundCenterHelper.getPlaygroundViewCenterPoint()
+        skviewPage4.frame = self.liveViewSafeAreaGuide.layoutFrame
+        if self.view.frame != CGRect.zero{
+            if let scene = self.scene as? Page4 {
+                scene.updatePosition()
+            }
+        }
     }
-    */
-
 }
 
 extension Page4ViewController: PlaygroundLiveViewMessageHandler{

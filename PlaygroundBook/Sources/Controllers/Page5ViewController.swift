@@ -9,12 +9,12 @@ import UIKit
 import SpriteKit
 import PlaygroundSupport
 
-class Page5ViewController: UIViewController {
+public class Page5ViewController: UIViewController, PlaygroundLiveViewSafeAreaContainer {
     
     var skviewPage5: SKView!
     var scene: SKScene!
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
         self.skviewPage5 = SKView(frame: view.frame)
@@ -32,16 +32,15 @@ class Page5ViewController: UIViewController {
 
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override public func viewDidLayoutSubviews() {
+        skviewPage5.center = PlaygroundCenterHelper.getPlaygroundViewCenterPoint()
+        skviewPage5.frame = self.liveViewSafeAreaGuide.layoutFrame
+        if self.view.frame != CGRect.zero{
+            if let scene = self.scene as? Page5 {
+                scene.updatePosition()
+            }
+        }
     }
-    */
 
 }
 
