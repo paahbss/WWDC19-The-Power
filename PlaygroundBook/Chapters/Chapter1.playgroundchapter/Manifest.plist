@@ -8,8 +8,11 @@
 	<array>
 		<string>intro.cutscenepage</string>
 		<string>page1.playgroundpage</string>
+		<string>page2.playgroundpage</string>
 		<string>page3.playgroundpage</string>
 		<string>page4.playgroundpage</string>
+		<string>page5.playgroundpage</string>
+		<string>aboutMe.playgroundpage</string>
 	</array>
 </dict>
 </plist>
