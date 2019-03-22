@@ -6,7 +6,53 @@
 //
 
 import UIKit
+import SpriteKit
 
 class Page4: SKScene {
-
+    
+    var nodeImage: SKSpriteNode!
+    let cameraNode = SKCameraNode()
+    var delegatePresenting: PresentingProtocol!
+    
+    override public func didMove(to view: SKView) {
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        initalSetup()
+    }
+    
+    private func initalSetup(){
+        let textute = SKTexture(imageNamed: "skin")
+        guard let viewWidth = view?.frame.width, let viewHeight = view?.frame.height else {return}
+        var size = CGSize.zero
+        if viewHeight > viewHeight {
+            size = CGSize(width: viewWidth * 0.7, height: viewHeight * 0.6)
+        }else{
+            size = CGSize(width: viewWidth * 0.4, height: viewHeight * 0.3)
+        }
+        size = CGSize(width: viewWidth * 0.4, height: viewHeight * 0.45)
+        self.nodeImage = SKSpriteNode(texture: textute, size: size)
+        self.nodeImage .position = CGPoint(x: 0, y: 0)
+        self.addChild(nodeImage)
+        //configuring camera
+        cameraNode.position = self.position
+        self.addChild(cameraNode)
+        self.camera = cameraNode
+    }
+    
+    func seeSkin(){
+        let zoomInAction = SKAction.repeatForever(SKAction.scale(by: 0.4, duration: 1))
+        let moveByX = SKAction.moveTo(x: nodeImage.frame.midX, duration: 1)
+        let moveByY = SKAction.moveTo(y: nodeImage.frame.maxY - CGFloat(20), duration: 1)
+        cameraNode.run(SKAction.group([moveByX, moveByY, zoomInAction ]))
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+            let scene = Page4Cont.init(size: self.size)
+            scene.backgroundColor = SKColor(red: 99/255, green: 18/255, blue: 4/255, alpha: 1)
+            guard let skview = self.view else {return}
+            skview.backgroundColor = SKColor(red: 99/255, green: 18/255, blue: 4/255, alpha: 1)
+            self.delegatePresenting.changeTo(scene: scene)
+        }
+    }
+    
 }
+
+

@@ -38,7 +38,7 @@ public class Page3: SKScene {
     }
     
     private func initalSetup(){
-        let textute = SKTexture(imageNamed: "people3")
+        let textute = SKTexture(imageNamed: "brain")
         guard let viewWidth = view?.frame.width, let viewHeight = view?.frame.height else {return}
         var size = CGSize.zero
         if viewHeight > viewHeight {

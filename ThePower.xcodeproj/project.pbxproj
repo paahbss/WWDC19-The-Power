@@ -221,13 +221,13 @@
 			children = (
 				2FBC2B10224133C200DA3AFE /* Page1.swift */,
 				2F6668CF22451E6300741D66 /* Page2.swift */,
+				2F6668D92245203900741D66 /* Page2Cont.swift */,
 				2FE3960922448C0400D5AFBA /* Page3.swift */,
 				2FE3960B2244A7E500D5AFBA /* Page3Cont.swift */,
 				2F6668D122451F2600741D66 /* Page4.swift */,
 				2F6668D72245201F00741D66 /* Page4Cont.swift */,
 				2F6668D322451F3800741D66 /* Page5.swift */,
 				2F6668D52245200F00741D66 /* Page5Cont.swift */,
-				2F6668D92245203900741D66 /* Page2Cont.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
