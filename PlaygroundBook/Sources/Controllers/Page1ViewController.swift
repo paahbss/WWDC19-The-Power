@@ -28,9 +28,7 @@ public class Page1ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
         skviewPage1.showsFPS = false
         skviewPage1.showsNodeCount = false
         skviewPage1.showsPhysics = false
-        //setupConstraints()
         skviewPage1.presentScene(self.scene)
-        
     }
 
     
@@ -43,27 +41,10 @@ public class Page1ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
             }
         }
     }
-    
-    private func setupConstraints(){
-        skviewPage1.topAnchor.constraint(equalTo: liveViewSafeAreaGuide.topAnchor).isActive = true
-        skviewPage1.bottomAnchor.constraint(equalTo: liveViewSafeAreaGuide.bottomAnchor).isActive = true
-        skviewPage1.leadingAnchor.constraint(equalTo: liveViewSafeAreaGuide.leadingAnchor).isActive = true
-        skviewPage1.trailingAnchor.constraint(equalTo: liveViewSafeAreaGuide.trailingAnchor).isActive = true
-    }
-    
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
 }
 
 extension Page1ViewController: PresentingProtocol{
+    public func changeTo(scene: SKScene) {}
     
     public func present(viewController: UIViewController) {
         self.present(viewController, animated: true, completion: nil)

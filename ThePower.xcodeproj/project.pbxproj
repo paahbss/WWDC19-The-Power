@@ -28,6 +28,13 @@
 		2FBC2B4F2244247400DA3AFE /* BalooChettan-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FBC2B4D2244212000DA3AFE /* BalooChettan-Regular.ttf */; };
 		2FBC2B5122443EBA00DA3AFE /* Page3ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B5022443EBA00DA3AFE /* Page3ViewController.swift */; };
 		2FBC2B5422443F3800DA3AFE /* Pulsing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B5322443F3800DA3AFE /* Pulsing.swift */; };
+		2FE3960822444EEF00D5AFBA /* Page4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3960722444EEF00D5AFBA /* Page4ViewController.swift */; };
+		2FE3960A22448C0400D5AFBA /* Page3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3960922448C0400D5AFBA /* Page3.swift */; };
+		2FE3960C2244A7E500D5AFBA /* Page3Cont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3960B2244A7E500D5AFBA /* Page3Cont.swift */; };
+		2FE396112245118000D5AFBA /* brain.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE3960D2245118000D5AFBA /* brain.png */; };
+		2FE396122245118000D5AFBA /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE3960E2245118000D5AFBA /* heart.png */; };
+		2FE396132245118000D5AFBA /* lung.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE3960F2245118000D5AFBA /* lung.png */; };
+		2FE396142245118000D5AFBA /* skin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE396102245118000D5AFBA /* skin.png */; };
 		5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */; };
 		5E086DD32051E3A3004D8D25 /* Manifest.plist in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5E086DCF2051DF0F004D8D25 /* Manifest.plist */; };
 		5E3196F32061DEA40077BBD7 /* LiveViewSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3196F22061DEA40077BBD7 /* LiveViewSupport.swift */; };
@@ -130,6 +137,13 @@
 		2FBC2B4D2244212000DA3AFE /* BalooChettan-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BalooChettan-Regular.ttf"; sourceTree = "<group>"; };
 		2FBC2B5022443EBA00DA3AFE /* Page3ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3ViewController.swift; sourceTree = "<group>"; };
 		2FBC2B5322443F3800DA3AFE /* Pulsing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pulsing.swift; sourceTree = "<group>"; };
+		2FE3960722444EEF00D5AFBA /* Page4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page4ViewController.swift; sourceTree = "<group>"; };
+		2FE3960922448C0400D5AFBA /* Page3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3.swift; sourceTree = "<group>"; };
+		2FE3960B2244A7E500D5AFBA /* Page3Cont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3Cont.swift; sourceTree = "<group>"; };
+		2FE3960D2245118000D5AFBA /* brain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brain.png; sourceTree = "<group>"; };
+		2FE3960E2245118000D5AFBA /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
+		2FE3960F2245118000D5AFBA /* lung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lung.png; sourceTree = "<group>"; };
+		2FE396102245118000D5AFBA /* skin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skin.png; sourceTree = "<group>"; };
 		5E086DC02051C5A7004D8D25 /* ThePower.playgroundbook */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThePower.playgroundbook; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E086DC72051DD03004D8D25 /* BookOverridingBuildSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BookOverridingBuildSettings.xcconfig; sourceTree = "<group>"; };
 		5E086DCD2051DDB8004D8D25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LiveView.storyboard; sourceTree = "<group>"; };
@@ -179,6 +193,7 @@
 				2FBC2B0E2241336700DA3AFE /* Page1ViewController.swift */,
 				2FBC2B2E2241B8CE00DA3AFE /* PlaygroundHelper.swift */,
 				2FBC2B5022443EBA00DA3AFE /* Page3ViewController.swift */,
+				2FE3960722444EEF00D5AFBA /* Page4ViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -187,6 +202,8 @@
 			isa = PBXGroup;
 			children = (
 				2FBC2B10224133C200DA3AFE /* Page1.swift */,
+				2FE3960922448C0400D5AFBA /* Page3.swift */,
+				2FE3960B2244A7E500D5AFBA /* Page3Cont.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -203,6 +220,10 @@
 		2FBC2B2D2241AF2600DA3AFE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2FE3960D2245118000D5AFBA /* brain.png */,
+				2FE3960F2245118000D5AFBA /* lung.png */,
+				2FE3960E2245118000D5AFBA /* heart.png */,
+				2FE396102245118000D5AFBA /* skin.png */,
 				2FBC2B4A224418B600DA3AFE /* first.png */,
 				2FBC2B3A22440C2300DA3AFE /* people0b.png */,
 				2FBC2B302243BF9300DA3AFE /* people0.png */,
@@ -472,14 +493,18 @@
 				2FBC2B4F2244247400DA3AFE /* BalooChettan-Regular.ttf in Resources */,
 				2FBC2B312243BF9300DA3AFE /* people0.png in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
+				2FE396142245118000D5AFBA /* skin.png in Resources */,
 				2FBC2B3B22440C2300DA3AFE /* people0b.png in Resources */,
+				2FE396132245118000D5AFBA /* lung.png in Resources */,
 				2FBC2B372243DCC100DA3AFE /* people3.png in Resources */,
 				5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */,
 				2FBC2B292241AE5E00DA3AFE /* arrow.png in Resources */,
+				2FE396122245118000D5AFBA /* heart.png in Resources */,
 				2FBC2B4B224418B600DA3AFE /* first.png in Resources */,
 				2FBC2B3F22440C3400DA3AFE /* people3b.png in Resources */,
 				2FBC2B432244149500DA3AFE /* people2.png in Resources */,
 				2FBC2B4022440C3400DA3AFE /* people2b.png in Resources */,
+				2FE396112245118000D5AFBA /* brain.png in Resources */,
 				2FBC2B352243DCA300DA3AFE /* people1.png in Resources */,
 				2FBC2B4122440C3400DA3AFE /* people1b.png in Resources */,
 			);
@@ -531,12 +556,15 @@
 			files = (
 				2FBC2B0F2241336700DA3AFE /* Page1ViewController.swift in Sources */,
 				2FBC2B25224192BE00DA3AFE /* ImageProtocol.swift in Sources */,
+				2FE3960A22448C0400D5AFBA /* Page3.swift in Sources */,
 				2FBC2B5422443F3800DA3AFE /* Pulsing.swift in Sources */,
 				5E3196F32061DEA40077BBD7 /* LiveViewSupport.swift in Sources */,
+				2FE3960C2244A7E500D5AFBA /* Page3Cont.swift in Sources */,
 				2FBC2B11224133C200DA3AFE /* Page1.swift in Sources */,
 				2FBC2B5122443EBA00DA3AFE /* Page3ViewController.swift in Sources */,
 				5EF2F9AE2054BBF300191409 /* LiveViewController.swift in Sources */,
 				2FBC2B1A22418B2900DA3AFE /* PresentingProtocol.swift in Sources */,
+				2FE3960822444EEF00D5AFBA /* Page4ViewController.swift in Sources */,
 				2FBC2B2F2241B8CE00DA3AFE /* PlaygroundHelper.swift in Sources */,
 				2FBC2B1822418AD500DA3AFE /* InformationViewController.swift in Sources */,
 			);

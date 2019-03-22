@@ -11,70 +11,66 @@ import PlaygroundSupport
 
 public class Page3ViewController: UIViewController, PlaygroundLiveViewSafeAreaContainer {
 
-    
-    private lazy var pulse: Pulsing = {
-        let pulse = Pulsing(numberOfPulses: .infinity, radius: 80, position: CGPoint.zero)
-        pulse.animationDuration = 1
-        pulse.backgroundColor = UIColor.blue.cgColor
-        return pulse
-    }()
-    
-    private lazy var imageHugging: UIImageView = {
-       let image = UIImageView()
-        image.image = UIImage(named: "people3")
-        image.translatesAutoresizingMaskIntoConstraints = false
-        image.contentMode = .scaleAspectFit
-        return image
-    }()
-    
-    private lazy var contentView: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
+    var skviewPage3: SKView!
+    var scene: SKScene!
 
-    
     override public func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
-        self.contentView.addSubview(imageHugging)
-        view.addSubview(contentView)
-        setupConstraints()
-        
+        self.skviewPage3 = SKView(frame: view.frame)
+        view.addSubview(skviewPage3)
+        self.scene = Page3.init(size: view.frame.size)
+        guard let scene3 = self.scene as? Page3 else {return}
+        scene3.delegatePresenting = self
+        scene.scaleMode = .resizeFill
+        scene.backgroundColor = SKColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
+        skviewPage3.ignoresSiblingOrder = true
+        skviewPage3.showsFPS = false
+        skviewPage3.showsNodeCount = false
+        skviewPage3.showsPhysics = false
+        skviewPage3.presentScene(self.scene)
     }
     
-    private func setupConstraints(){
-        contentView.topAnchor.constraint(equalTo: liveViewSafeAreaGuide.topAnchor).isActive = true
-        contentView.bottomAnchor.constraint(equalTo: liveViewSafeAreaGuide.bottomAnchor).isActive = true
-        contentView.leadingAnchor.constraint(equalTo: liveViewSafeAreaGuide.leadingAnchor).isActive = true
-        contentView.trailingAnchor.constraint(equalTo: liveViewSafeAreaGuide.trailingAnchor).isActive = true
-        imageHugging.centerXAnchor.constraint(equalTo: self.contentView.centerXAnchor).isActive = true
-        imageHugging.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
-        imageHugging.heightAnchor.constraint(equalTo: self.contentView.heightAnchor, multiplier: 0.5).isActive = true
-        imageHugging.widthAnchor.constraint(equalTo: self.contentView.widthAnchor, multiplier: 0.5).isActive = true
-        
+    override public func viewDidLayoutSubviews() {
+        skviewPage3.center = PlaygroundCenterHelper.getPlaygroundViewCenterPoint()
+        skviewPage3.frame = self.liveViewSafeAreaGuide.layoutFrame
+        if self.view.frame != CGRect.zero{
+            if let scene = self.scene as? Page3 {
+                scene.updatePosition()
+            }
+        }
     }
     
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destination.
-     // Pass the selected object to the new view controller.
-     }
-     */
-    
+//    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        guard let scene = self.scene as? Page3 else {return}
+//        scene.gotoBrain()
+//    }
 }
 
-extension Page3ViewController: PresentingProtocol{
+extension Page3ViewController: PlaygroundLiveViewMessageHandler{
     
+    public func receive(_ message: PlaygroundValue) {
+        guard case let .string(gotoBrain) = message else { return }
+
+        if gotoBrain == "gotoBrain" {
+            guard let scene = self.scene as? Page3 else {return}
+            scene.gotoBrain()
+        }
+    }
+}
+
+extension Page3ViewController: PresentingProtocol {
     public func present(viewController: UIViewController) {
-        self.present(viewController, animated: true, completion: nil)
+        
     }
     
     public func dismiss(viewController: UIViewController) {
-        viewController.dismiss(animated: true, completion: nil)
+        
     }
+    
+    public func changeTo(scene: SKScene) {
+        skviewPage3.presentScene(scene)
+    }
+    
+    
 }

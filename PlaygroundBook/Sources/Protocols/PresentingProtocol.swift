@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import SpriteKit
 import UIKit
 
 public protocol PresentingProtocol {
     func present(viewController: UIViewController)
     func dismiss(viewController: UIViewController)
+    func changeTo(scene: SKScene)
 }
