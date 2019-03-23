@@ -25,6 +25,19 @@ func seeLung() {
 }
 //#-end-hidden-code
 
+/*:
+ 
+ # Strengthening our Immune System 💪🏾
+ 
+ If you are getting sick very often, it may be that what is lacking in your health is not vitamins, but a warm hug 👐🏽. This is suggested by some scientific research. Scholars have shown that the higher a person's level of social interaction, the **lower the risk of contracting infections**.
+ 
+ They found that a possible reason for this would be the contraction of the thorax. Wait, you'll understand.
+ 
+   When we give and receive a hug we can increase our resistance to viruses and respond better to the effects of exposure, because when we contract the thorax a gland called **Thymus** is activated. And it is responsible for the production of white blood cells, which helps to strengthen the immune system. Is not that incredible?
+ 
+ 
+ */
+
 
 
 //#-code-completion(everything, hide)

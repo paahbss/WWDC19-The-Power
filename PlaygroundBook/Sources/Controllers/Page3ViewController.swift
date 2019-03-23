@@ -40,22 +40,49 @@ public class Page3ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
             }
         }
     }
-//    
+    
 //    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        guard let scene = self.scene as? Page3 else {return}
-//        scene.gotoBrain()
+//        if let scene = self.scene as? Page3 {
+//            scene.visitBrain()
+//        }
+//        if let scene = self.scene as? Page3Cont{
+//            scene.activateHypothalamus()
+//            scene.releaseOxytocin()
+//        }
+//        
 //    }
 }
 
 extension Page3ViewController: PlaygroundLiveViewMessageHandler{
     
     public func receive(_ message: PlaygroundValue) {
-        guard case let .string(gotoBrain) = message else { return }
-
-        if gotoBrain == "gotoBrain" {
+        guard case let .string(command) = message else { return }
+        
+        
+        switch command {
+        case "visitBrain":
             guard let scene = self.scene as? Page3 else {return}
-            scene.gotoBrain()
+            scene.visitBrain()
+            break
+        case "releaseOxytocin":
+            guard let sceneCont = self.scene as? Page3Cont else {return}
+
+            sceneCont.releaseOxytocin()
+            break
+        case "decreaseAnxiety":
+            guard let sceneCont = self.scene as? Page3Cont else {return}
+
+            sceneCont.decreaseAnxiety()
+            break
+        case "activateHypothalamus":
+            guard let sceneCont = self.scene as? Page3Cont else {return}
+
+            sceneCont.activateHypothalamus()
+            break
+        default:
+            break
         }
+        
     }
 }
 
@@ -70,5 +97,6 @@ extension Page3ViewController: PresentingProtocol {
     
     public func changeTo(scene: SKScene) {
         skviewPage3.presentScene(scene)
+        self.scene = scene
     }
 }

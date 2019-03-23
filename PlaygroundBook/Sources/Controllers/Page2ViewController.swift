@@ -46,8 +46,7 @@ public class Page2ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
     }
     
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-                guard let scene = self.scene as? Page2 else {return}
-                scene.gotoHeart()
+        
     }
 }
 

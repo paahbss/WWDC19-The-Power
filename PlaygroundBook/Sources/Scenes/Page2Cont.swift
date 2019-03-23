@@ -8,7 +8,7 @@
 import UIKit
 import SpriteKit
 
-class Page2Cont: SKScene {
+public class Page2Cont: SKScene {
 
     var nodeImage: SKSpriteNode!
     let cameraNode = SKCameraNode()
