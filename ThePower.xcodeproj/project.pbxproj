@@ -24,6 +24,14 @@
 		2F6668E92246755F00741D66 /* emoji3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F6668E62246755F00741D66 /* emoji3.png */; };
 		2F6668EA2246755F00741D66 /* emoji5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F6668E72246755F00741D66 /* emoji5.png */; };
 		2F6668EC2246C9DB00741D66 /* virus.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F6668EB2246C9DB00741D66 /* virus.png */; };
+		2F6668EE2247FE7400741D66 /* lung.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F6668ED2247FE7400741D66 /* lung.png */; };
+		2F6668F022480EB700741D66 /* blood.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F6668EF22480EB700741D66 /* blood.png */; };
+		2F6668F7224818D500741D66 /* strength2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F6668F1224818D300741D66 /* strength2.png */; };
+		2F6668F8224818D500741D66 /* strength0.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F6668F2224818D300741D66 /* strength0.png */; };
+		2F6668F9224818D500741D66 /* strength4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F6668F3224818D400741D66 /* strength4.png */; };
+		2F6668FA224818D500741D66 /* strength3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F6668F4224818D400741D66 /* strength3.png */; };
+		2F6668FB224818D500741D66 /* strength5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F6668F5224818D400741D66 /* strength5.png */; };
+		2F6668FC224818D500741D66 /* strength1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F6668F6224818D400741D66 /* strength1.png */; };
 		2FBC2B0F2241336700DA3AFE /* Page1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B0E2241336700DA3AFE /* Page1ViewController.swift */; };
 		2FBC2B11224133C200DA3AFE /* Page1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B10224133C200DA3AFE /* Page1.swift */; };
 		2FBC2B1822418AD500DA3AFE /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FBC2B1722418AD500DA3AFE /* InformationViewController.swift */; };
@@ -50,7 +58,7 @@
 		2FE3960C2244A7E500D5AFBA /* Page3Cont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE3960B2244A7E500D5AFBA /* Page3Cont.swift */; };
 		2FE396112245118000D5AFBA /* brain.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE3960D2245118000D5AFBA /* brain.png */; };
 		2FE396122245118000D5AFBA /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE3960E2245118000D5AFBA /* heart.png */; };
-		2FE396132245118000D5AFBA /* lung.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE3960F2245118000D5AFBA /* lung.png */; };
+		2FE396132245118000D5AFBA /* lungTimo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE3960F2245118000D5AFBA /* lungTimo.png */; };
 		2FE396142245118000D5AFBA /* skin.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE396102245118000D5AFBA /* skin.png */; };
 		5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E086DCC2051DDAE004D8D25 /* LiveView.storyboard */; };
 		5E086DD32051E3A3004D8D25 /* Manifest.plist in Copy Book Contents */ = {isa = PBXBuildFile; fileRef = 5E086DCF2051DF0F004D8D25 /* Manifest.plist */; };
@@ -152,6 +160,14 @@
 		2F6668E62246755F00741D66 /* emoji3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji3.png; sourceTree = "<group>"; };
 		2F6668E72246755F00741D66 /* emoji5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = emoji5.png; sourceTree = "<group>"; };
 		2F6668EB2246C9DB00741D66 /* virus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = virus.png; sourceTree = "<group>"; };
+		2F6668ED2247FE7400741D66 /* lung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lung.png; sourceTree = "<group>"; };
+		2F6668EF22480EB700741D66 /* blood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blood.png; sourceTree = "<group>"; };
+		2F6668F1224818D300741D66 /* strength2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength2.png; sourceTree = "<group>"; };
+		2F6668F2224818D300741D66 /* strength0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength0.png; sourceTree = "<group>"; };
+		2F6668F3224818D400741D66 /* strength4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength4.png; sourceTree = "<group>"; };
+		2F6668F4224818D400741D66 /* strength3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength3.png; sourceTree = "<group>"; };
+		2F6668F5224818D400741D66 /* strength5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength5.png; sourceTree = "<group>"; };
+		2F6668F6224818D400741D66 /* strength1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = strength1.png; sourceTree = "<group>"; };
 		2FBC2B0E2241336700DA3AFE /* Page1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1ViewController.swift; sourceTree = "<group>"; };
 		2FBC2B10224133C200DA3AFE /* Page1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page1.swift; sourceTree = "<group>"; };
 		2FBC2B1722418AD500DA3AFE /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
@@ -176,7 +192,7 @@
 		2FE3960B2244A7E500D5AFBA /* Page3Cont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page3Cont.swift; sourceTree = "<group>"; };
 		2FE3960D2245118000D5AFBA /* brain.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brain.png; sourceTree = "<group>"; };
 		2FE3960E2245118000D5AFBA /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
-		2FE3960F2245118000D5AFBA /* lung.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lung.png; sourceTree = "<group>"; };
+		2FE3960F2245118000D5AFBA /* lungTimo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lungTimo.png; sourceTree = "<group>"; };
 		2FE396102245118000D5AFBA /* skin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = skin.png; sourceTree = "<group>"; };
 		5E086DC02051C5A7004D8D25 /* ThePower.playgroundbook */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ThePower.playgroundbook; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E086DC72051DD03004D8D25 /* BookOverridingBuildSettings.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BookOverridingBuildSettings.xcconfig; sourceTree = "<group>"; };
@@ -268,10 +284,18 @@
 				2F6668E12246701D00741D66 /* emoji0.png */,
 				2F6668DF2246701C00741D66 /* emoji1.png */,
 				2F6668E02246701D00741D66 /* emoji2.png */,
+				2F6668EF22480EB700741D66 /* blood.png */,
+				2F6668F2224818D300741D66 /* strength0.png */,
+				2F6668F6224818D400741D66 /* strength1.png */,
+				2F6668F1224818D300741D66 /* strength2.png */,
+				2F6668F4224818D400741D66 /* strength3.png */,
+				2F6668F3224818D400741D66 /* strength4.png */,
+				2F6668F5224818D400741D66 /* strength5.png */,
 				2FE3960D2245118000D5AFBA /* brain.png */,
 				2F6668EB2246C9DB00741D66 /* virus.png */,
+				2F6668ED2247FE7400741D66 /* lung.png */,
 				2F6668DD2245B3D900741D66 /* hypo.png */,
-				2FE3960F2245118000D5AFBA /* lung.png */,
+				2FE3960F2245118000D5AFBA /* lungTimo.png */,
 				2FE3960E2245118000D5AFBA /* heart.png */,
 				2FE396102245118000D5AFBA /* skin.png */,
 				2FBC2B4A224418B600DA3AFE /* first.png */,
@@ -544,18 +568,25 @@
 				2F6668EA2246755F00741D66 /* emoji5.png in Resources */,
 				2FBC2B4F2244247400DA3AFE /* BalooChettan-Regular.ttf in Resources */,
 				2FBC2B312243BF9300DA3AFE /* people0.png in Resources */,
+				2F6668EE2247FE7400741D66 /* lung.png in Resources */,
+				2F6668FB224818D500741D66 /* strength5.png in Resources */,
 				2F6668E32246701D00741D66 /* emoji2.png in Resources */,
 				2F6668E42246701D00741D66 /* emoji0.png in Resources */,
 				2F6668EC2246C9DB00741D66 /* virus.png in Resources */,
 				2F6668E92246755F00741D66 /* emoji3.png in Resources */,
 				5EF2F97C2054B6E400191409 /* ManifestPlist.strings in Resources */,
+				2F6668F8224818D500741D66 /* strength0.png in Resources */,
 				2FE396142245118000D5AFBA /* skin.png in Resources */,
+				2F6668F022480EB700741D66 /* blood.png in Resources */,
 				2FBC2B3B22440C2300DA3AFE /* people0b.png in Resources */,
-				2FE396132245118000D5AFBA /* lung.png in Resources */,
+				2FE396132245118000D5AFBA /* lungTimo.png in Resources */,
+				2F6668F7224818D500741D66 /* strength2.png in Resources */,
+				2F6668F9224818D500741D66 /* strength4.png in Resources */,
 				2FBC2B372243DCC100DA3AFE /* people3.png in Resources */,
 				5E086DCA2051DDAE004D8D25 /* LiveView.storyboard in Resources */,
 				2F6668E22246701D00741D66 /* emoji1.png in Resources */,
 				2F6668E82246755F00741D66 /* emoji4.png in Resources */,
+				2F6668FC224818D500741D66 /* strength1.png in Resources */,
 				2FBC2B292241AE5E00DA3AFE /* arrow.png in Resources */,
 				2FE396122245118000D5AFBA /* heart.png in Resources */,
 				2FBC2B4B224418B600DA3AFE /* first.png in Resources */,
@@ -563,6 +594,7 @@
 				2FBC2B3F22440C3400DA3AFE /* people3b.png in Resources */,
 				2FBC2B432244149500DA3AFE /* people2.png in Resources */,
 				2FBC2B4022440C3400DA3AFE /* people2b.png in Resources */,
+				2F6668FA224818D500741D66 /* strength3.png in Resources */,
 				2FE396112245118000D5AFBA /* brain.png in Resources */,
 				2FBC2B352243DCA300DA3AFE /* people1.png in Resources */,
 				2FBC2B4122440C3400DA3AFE /* people1b.png in Resources */,

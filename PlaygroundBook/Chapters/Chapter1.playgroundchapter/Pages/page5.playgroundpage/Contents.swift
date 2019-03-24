@@ -18,9 +18,18 @@ var sawLung = false
 //PlaygroundPage.current.needsIndefiniteExecution = true
 
 
-func seeLung() {
-    proxy?.send(.string("seeLung"))
+func visitLung() {
+    proxy?.send(.string("visitLung"))
     sawLung = true
+}
+func activateThymus() {
+    proxy?.send(.string("activateThymus"))
+}
+func produceWhiteBloodCells() {
+    proxy?.send(.string("produceWhiteBloodCells"))
+}
+func strengthenImmuneSystem() {
+    proxy?.send(.string("strengthenImmuneSystem"))
 }
 //#-end-hidden-code
 /*:
@@ -35,24 +44,22 @@ func seeLung() {
  
    When we give and receive a hug we can increase our resistance to viruses 👾 and respond better to the effects of exposure, because when we contract the thorax a gland called **Thymus** is activated. And it is responsible for the production of white blood cells, which helps to strengthen the immune system. Is not that incredible?😱
  
-
  **Goal:** Strengthen the immune system by giving a tiiight bear hug 🐻
  
- 1. Visit the brain to see what happens there
- 2. Activate the brain region called hypothalamus
- 3. With the hypothalamus activated release the hormone called oxytocin
- 4. Decrease levels of anxiety and be happy! 🤩
+ 1. Come and visit the lung with me 😃
+ 2. Activate the **Thymus** gland
+ 3. Produce white blood cells
+ 4. Strengthen the immune system 💪🏼😎
  
- **On every step tap** Run my code to show the changes you make
+ **On every step tap** ``Run my code`` to show the changes you make
  [next page](@next)
  */
 //#-end-hidden-code
 //#-code-completion(everything, hide)
-//#-code-completion(identifier, show, releaseOxytocin(), activateHypothalamus(), decreaseAnxiety(), visitBrain())
+//#-code-completion(identifier, show, visitLung(), produceWhiteBloodCells(), activateThymus(), strengthenImmuneSystem())
 //#-editable-code Tap to write your code
 //#-end-editable-code
 //#-hidden-code
-
 
 //#-hidden-code
 if !sawLung {

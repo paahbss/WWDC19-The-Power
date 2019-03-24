@@ -47,11 +47,27 @@ public class Page5ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
 extension Page5ViewController: PlaygroundLiveViewMessageHandler{
     
     public func receive(_ message: PlaygroundValue) {
-        guard case let .string(seeLung) = message else { return }
-        
-        if seeLung == "seeLung" {
+        guard case let .string(command) = message else { return }
+
+        switch command {
+        case "visitLung":
             guard let scene = self.scene as? Page5 else {return}
-            scene.seeLung()
+            scene.visitLung()
+            break
+        case "activateThymus":
+            guard let sceneCont = self.scene as? Page5Cont else {return}
+            sceneCont.activateThymus()
+            break
+        case "produceWhiteBloodCells":
+            guard let sceneCont = self.scene as? Page5Cont else {return}
+            sceneCont.produceWhiteBloodCells()
+            break
+        case "strengthenImmuneSystem":
+            guard let sceneCont = self.scene as? Page5Cont else {return}
+            sceneCont.strengthenImmuneSystem()
+            break
+        default:
+            break
         }
     }
 }
@@ -67,6 +83,7 @@ extension Page5ViewController: PresentingProtocol {
     
     public func changeTo(scene: SKScene) {
         skviewPage5.presentScene(scene)
+        self.scene = scene
     }
 }
 

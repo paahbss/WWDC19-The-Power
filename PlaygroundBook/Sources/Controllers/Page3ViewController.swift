@@ -56,8 +56,7 @@ extension Page3ViewController: PlaygroundLiveViewMessageHandler{
     
     public func receive(_ message: PlaygroundValue) {
         guard case let .string(command) = message else { return }
-        
-        
+    
         switch command {
         case "visitBrain":
             guard let scene = self.scene as? Page3 else {return}

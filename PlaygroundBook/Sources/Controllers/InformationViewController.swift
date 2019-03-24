@@ -26,7 +26,8 @@ public class InformationViewController: UIViewController, PlaygroundLiveViewSafe
         label.font = UIFont(name: "BalooChettan-Regular", size: 12)
         label.textColor = UIColor(red: 29/255, green: 38/255, blue: 49/255, alpha: 1.0)
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 12)
+        label.font = UIFont(name: "BalooChettan-Regular", size: 12)
+        label.textColor = UIColor.lightGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -36,8 +37,8 @@ public class InformationViewController: UIViewController, PlaygroundLiveViewSafe
         label.text = ""
         label.numberOfLines = 0
         label.sizeToFit()
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.textColor = .black
+        label.font = UIFont(name: "BalooChettan-Regular", size: 16)
+        label.textColor = .gray
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -45,12 +46,11 @@ public class InformationViewController: UIViewController, PlaygroundLiveViewSafe
     
     let titleHug: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "BalooChettan-Regular", size: 20)
+        label.font = UIFont(name: "BalooChettan-Regular", size: 22)
         label.text = ""
         label.numberOfLines = 0
         label.sizeToFit()
-        label.font = UIFont.boldSystemFont(ofSize: 20)
-        label.textColor = .black
+        label.textColor = .gray
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -60,6 +60,7 @@ public class InformationViewController: UIViewController, PlaygroundLiveViewSafe
         let arrow = UIImageView()
         arrow.image = UIImage(named: "arrow.png")
         arrow.contentMode = .scaleAspectFit
+        arrow.isUserInteractionEnabled = true
         arrow.translatesAutoresizingMaskIntoConstraints = false
         return arrow
     }()

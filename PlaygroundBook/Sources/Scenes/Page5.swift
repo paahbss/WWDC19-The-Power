@@ -51,13 +51,13 @@ class Page5: SKScene {
         return size
     }
     
-    func seeLung(){
+    func visitLung(){
         let zoomInAction = SKAction.repeatForever(SKAction.scale(by: 0.4, duration: 1))
         let moveByX = SKAction.moveTo(x: nodeImage.frame.midX - 20, duration: 1)
-        let moveByY = SKAction.moveTo(y: nodeImage.frame.midY - CGFloat(80), duration: 1)
+        let moveByY = SKAction.moveTo(y: nodeImage.frame.midY - CGFloat(100), duration: 1)
         cameraNode.run(SKAction.group([moveByX, moveByY, zoomInAction ]))
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.8) {
             let scene = Page5Cont.init(size: self.size)
             scene.backgroundColor = SKColor(red: 99/255, green: 18/255, blue: 4/255, alpha: 1)
             guard let skview = self.view else {return}
@@ -65,6 +65,8 @@ class Page5: SKScene {
             self.delegatePresenting.changeTo(scene: scene)
         }
     }
+    
+    
     
 }
 
