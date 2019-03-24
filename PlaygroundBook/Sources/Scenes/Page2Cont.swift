@@ -12,6 +12,8 @@ public class Page2Cont: SKScene {
 
     var nodeImage: SKSpriteNode!
     let cameraNode = SKCameraNode()
+    var informationLabel: SKLabelNode!
+    var virusArray: [SKSpriteNode] = []
     var delegatePresenting: PresentingProtocol!
     
     
@@ -19,17 +21,69 @@ public class Page2Cont: SKScene {
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         let action = SKAction.changeColor(startColor: SKColor(red: 188/255, green: 206/255, blue: 115/255, alpha: 1.0), endColor: SKColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0), duration: 1.5)
         self.run(action)
+        let swipe = UISwipeGestureRecognizer(target: self, action: #selector(swipeHandler))
+        swipe.direction = .down
+        view.addGestureRecognizer(swipe)
         initalSetup()
-        //createVirus()
+        createVirus()
+    }
+    
+    @objc func swipeHandler(){
+        guard let superview = self.view?.superview else {return}
+        for i in 1..<5 {
+            let oxytocin = SKShapeNode(circleOfRadius: 8)
+            oxytocin.zPosition = 3
+            oxytocin.fillColor = .red
+            let randomPropX = CGFloat.random(in: (-superview.frame.width/2)...(superview.frame.width/2))
+            oxytocin.position = CGPoint(x: randomPropX, y: superview.frame.height/2)
+            let center = CGPoint(x: oxytocin.position.x, y: -superview.frame.height/2)
+            let destAction = SKAction.move(to: center, duration: TimeInterval(Int.random(in: 10..<15)))
+            oxytocin.run(destAction) {
+                oxytocin.removeFromParent()
+            }
+            self.addChild(oxytocin)
+        }
+        for _ in 0..<4{
+            if !virusArray.isEmpty{
+                let virus = virusArray[0]
+                let shake = SKAction.shake(duration: 1)
+                virus.run(shake) {
+                    virus.removeFromParent()
+                }
+                virusArray.remove(at: 0)
+            }else{
+                let alert = UIAlertController(title: nil, message: "Congratulation! Due to the level of oxytocin released in the body.", preferredStyle: <#T##UIAlertController.Style#>)
+                delegatePresenting.present(viewController: <#T##UIViewController#>)
+            }
+        }
+        let action = nodeImage.action(forKey: "pulse")
+        guard let actionSpeed = action?.speed else {return}
+        if Double(actionSpeed) <= 0.1 {
+            action?.speed -= 0.1
+        }
     }
     
     func updatePosition(){
         nodeImage.removeFromParent()
+        informationLabel.removeFromParent()
         let textute = SKTexture(imageNamed: "heart")
         guard let size = self.getSizeWith(scale: false) else {return}
         self.nodeImage = SKSpriteNode(texture: textute, size: size)
         self.nodeImage .position = CGPoint(x: 0, y: 0)
+        let pulseUp = SKAction.scale(to: 1.2, duration: 0.2)
+        let pulseDown = SKAction.scale(to: 0.9, duration: 0.2)
+        let pulse = SKAction.sequence([pulseUp, pulseDown])
+        let repeatPulse = SKAction.repeatForever(pulse)
+        self.nodeImage.run(repeatPulse, withKey: "pulse")
         self.addChild(nodeImage)
+        informationLabel = SKLabelNode(text: "Swipe down until the heart is calmer and free from disease risks")
+        informationLabel.fontSize = 16
+        informationLabel.fontColor = .black
+        informationLabel.fontName = "BalooChettan-Regular"
+        informationLabel.verticalAlignmentMode = .center
+        informationLabel.horizontalAlignmentMode = .center
+        informationLabel.position = CGPoint(x: 0, y: -self.frame.height/3)
+        self.addChild(informationLabel)
     }
     
     private func getSizeWith(scale: Bool) -> CGSize? {
@@ -46,40 +100,15 @@ public class Page2Cont: SKScene {
     
     func createVirus(){
         guard let superview = self.view else {return}
-//        var rects: [SKSpriteNode] = []
-//
-//        let upView = SKSpriteNode(color: .gray, size: CGSize(width: superview.frame.width, height: 20))
-//        upView.anchorPoint = CGPoint(x: 0, y: 0)
-//        upView.position = CGPoint(x: -superview.frame.width/2, y: superview.frame.height/2)
-//        self.addChild(upView)
-//
-//        let downView = SKSpriteNode(color: .blue, size: CGSize(width: superview.frame.width, height: 20))
-//        downView.anchorPoint = CGPoint(x: 0, y: 0)
-//        downView.position = CGPoint(x: -superview.frame.width/2, y: -superview.frame.height/2)
-//        self.addChild(downView)
-//
-//        let leftView = SKSpriteNode(color: .red, size: CGSize(width: 20, height: superview.frame.height))
-//        leftView.anchorPoint = CGPoint(x: 0, y: 0)
-//        leftView.position = CGPoint(x: -superview.frame.width/2, y: -superview.frame.height/2)
-//        self.addChild(leftView)
-//
-//        let rightView = SKSpriteNode(color: .green, size: CGSize(width: 20, height: superview.frame.height))
-//        rightView.anchorPoint = CGPoint(x: 0, y: 0)
-//        rightView.position = CGPoint(x: (superview.frame.width/2), y: -superview.frame.height/2)
-//        self.addChild(rightView)
-//        rects.append(leftView)
-//        rects.append(downView)
-//        rects.append(rightView)
-//        rects.append(upView)
+        
         var randomEdgeX: CGFloat = 0
         var randomEdgeY: CGFloat = 0
-        var randXaux: CGFloat = 0
-        var randYaux: CGFloat = 0
-        for i in 1..<100 {
+        for i in 1..<20 {
             let texture = SKTexture(imageNamed: "virus")
             //guard let nodeRandon = rects.randomElement() else {return}
             let virus = SKSpriteNode(texture: texture, size: CGSize(width: 30, height: 30))
             //let posIni = randomPosition(inFrame: nodeRandon.frame)
+            virus.name = "virus"
             
             if i % 2 == 0 {
                 randomEdgeX = Int.random(in: 0..<2) == 0 ? -superview.frame.width/2 : superview.frame.width/2 // left or right
@@ -92,13 +121,10 @@ public class Page2Cont: SKScene {
                 let randomPropX = CGFloat.random(in: (-superview.frame.width/2)...(superview.frame.width/2))
                 virus.position = CGPoint(x: randomPropX, y: randomEdgeY*randomPropY)
             }
-            
-            
             let center = CGPoint(x: self.frame.midX, y: self.frame.midY)
-            
             let destAction = SKAction.move(to: center, duration: TimeInterval(Int.random(in: 30..<40)))
             virus.run(destAction)
-            
+            virusArray.append(virus)
             self.addChild(virus)
         }
     }
@@ -122,11 +148,24 @@ public class Page2Cont: SKScene {
         self.nodeImage = SKSpriteNode(texture: textute, size: size)
         self.nodeImage .position = CGPoint(x: 0, y: 0)
         self.nodeImage.run(SKAction.scale(by: 3, duration: 1))
+        let pulseUp = SKAction.scale(to: 1.2, duration: 0.2)
+        let pulseDown = SKAction.scale(to: 0.9, duration: 0.2)
+        let pulse = SKAction.sequence([pulseUp, pulseDown])
+        let repeatPulse = SKAction.repeatForever(pulse)
+        self.nodeImage.run(repeatPulse, withKey: "pulse")
         self.addChild(nodeImage)
         //configuring camera
         cameraNode.position = self.position
         self.addChild(cameraNode)
         self.camera = cameraNode
+        informationLabel = SKLabelNode(text: "Swipe down until the heart is calmer and free from disease risks")
+        informationLabel.fontSize = 16
+        informationLabel.fontColor = .black
+        informationLabel.fontName = "BalooChettan-Regular"
+        informationLabel.verticalAlignmentMode = .center
+        informationLabel.horizontalAlignmentMode = .center
+        informationLabel.position = CGPoint(x: 0, y: -self.frame.height/3)
+        self.addChild(informationLabel)
     }
 }
 
@@ -150,6 +189,20 @@ extension SKAction {
             }
         }
         return change
+    }
+    
+    class func shake(duration:CGFloat, amplitudeX:Int = 3, amplitudeY:Int = 3) -> SKAction {
+        let numberOfShakes = duration / 0.015 / 2.0
+        var actionsArray:[SKAction] = []
+        for _ in 1...Int(numberOfShakes) {
+            let dx = CGFloat(arc4random_uniform(UInt32(amplitudeX))) - CGFloat(amplitudeX / 2)
+            let dy = CGFloat(arc4random_uniform(UInt32(amplitudeY))) - CGFloat(amplitudeY / 2)
+            let forward = SKAction.moveBy(x: dx, y:dy, duration: 0.015)
+            let reverse = forward.reversed()
+            actionsArray.append(forward)
+            actionsArray.append(reverse)
+        }
+        return SKAction.sequence(actionsArray)
     }
 }
 

@@ -12,6 +12,7 @@ import PlaygroundSupport
 public class Page3: SKScene {    
     
     var nodeImage: SKSpriteNode!
+    
     let cameraNode = SKCameraNode()
     var delegatePresenting: PresentingProtocol!
     
@@ -29,6 +30,7 @@ public class Page3: SKScene {
         self.nodeImage = SKSpriteNode(texture: textute, size: size)
         self.nodeImage .position = CGPoint(x: 0, y: 0)
         self.addChild(nodeImage)
+       
     }
     
     private func initalSetup(){
@@ -41,6 +43,7 @@ public class Page3: SKScene {
         cameraNode.position = self.position
         self.addChild(cameraNode)
         self.camera = cameraNode
+        //configuring label
     }
     
     private func getSize() -> CGSize? {

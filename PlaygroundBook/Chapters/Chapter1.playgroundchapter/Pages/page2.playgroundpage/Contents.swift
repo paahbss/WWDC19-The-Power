@@ -33,29 +33,21 @@ func visitHeart() {
  
  This process of cardiac balance also receives a contribution from the receptors located in the skin, which act as a pressure-center network that is in contact with the brain through nerves connected to various organs, including the heart.
  
+ Let's visit the heart to see in details what happens there 😃?
  
+ **Go ahead!**
  
- **Goal:** See what happens to our brain when we get a really good hug by typing in the correct commands
+1. Use the ``visitHeart()`` command
+2. Click on ``Run my code`` to visit heart
+3. **Swipe down** to released a hormone called oxytocin until the heart is calmer and free from disease risks
  
- 1. Visit the brain to see what happens there 🧠
- 2. Activate the brain region called hypothalamus
- 3. With the hypothalamus activated release the hormone called oxytocin
- 4. Decrease levels of anxiety and be happy! 🤩
- 
- **On every step tap** Run my code to show the changes you make
  [next page](@next)
-
- 
- **On every step tap** 'Run my code' to show the changes you make
-
  */
-
 
 //#-code-completion(everything, hide)
 //#-code-completion(identifier, show, visitHeart())
 //#-editable-code Tap to write your code
 //#-end-editable-code
-
 
 //#-hidden-code
 if !visited {

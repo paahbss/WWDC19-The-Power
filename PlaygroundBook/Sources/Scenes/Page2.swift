@@ -12,6 +12,7 @@ class Page2: SKScene {
 
     var nodeImage: SKSpriteNode!
     let cameraNode = SKCameraNode()
+    
     var delegatePresenting: PresentingProtocol!
     
     override public func didMove(to view: SKView) {
@@ -26,6 +27,7 @@ class Page2: SKScene {
         self.nodeImage = SKSpriteNode(texture: textute, size: size)
         self.nodeImage .position = CGPoint(x: 0, y: 0)
         self.addChild(nodeImage)
+       
     }
     
     private func getSize() -> CGSize? {
