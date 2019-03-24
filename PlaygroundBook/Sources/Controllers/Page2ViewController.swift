@@ -14,6 +14,8 @@ public class Page2ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
     var skviewPage2: SKView!
     var scene: SKScene!
     var sceneIsPresented = false
+
+     
     
     override public func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +29,7 @@ public class Page2ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
         scene.backgroundColor = SKColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
         skviewPage2.ignoresSiblingOrder = true
         skviewPage2.showsFPS = false
-        skviewPage2.showsNodeCount = true
+        skviewPage2.showsNodeCount = false
         skviewPage2.showsPhysics = false
         skviewPage2.presentScene(self.scene)
     }
@@ -50,7 +52,10 @@ public class Page2ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
         }
     }
     
-
+    @objc func callBack(){
+        
+    }
+    
 }
 
 extension Page2ViewController: PlaygroundLiveViewMessageHandler{

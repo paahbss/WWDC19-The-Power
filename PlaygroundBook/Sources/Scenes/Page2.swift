@@ -61,9 +61,9 @@ class Page2: SKScene {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.7) {
             let scene = Page2Cont.init(size: self.size)
+            scene.delegatePresenting = Page2ViewController()
             scene.backgroundColor = SKColor.white
             guard let skview = self.view else {return}
-            
             skview.backgroundColor = SKColor.white
             self.delegatePresenting.changeTo(scene: scene)
         }

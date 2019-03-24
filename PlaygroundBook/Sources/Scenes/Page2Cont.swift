@@ -52,13 +52,25 @@ public class Page2Cont: SKScene {
                 }
                 virusArray.remove(at: 0)
             }else{
-                let alert = UIAlertController(title: nil, message: "Congratulation! Due to the level of oxytocin released in the body.", preferredStyle: <#T##UIAlertController.Style#>)
-                delegatePresenting.present(viewController: <#T##UIViewController#>)
+                informationLabel.fontSize = 18
+                informationLabel.fontColor = .gray
+                self.informationLabel.text = "Congratulation! due to the level of oxytocin released in the body the heart is calmer and more protected against diseases."
+
+                if #available(iOS 11.0, *) {
+                    self.informationLabel.numberOfLines = 0
+                    self.informationLabel.preferredMaxLayoutWidth = size.width
+                } else {
+                    // Fallback on earlier versions
+                }
+                
+                
+                
+                
             }
         }
         let action = nodeImage.action(forKey: "pulse")
         guard let actionSpeed = action?.speed else {return}
-        if Double(actionSpeed) <= 0.1 {
+        if Double(actionSpeed) >= 0.1 {
             action?.speed -= 0.1
         }
     }
@@ -77,12 +89,16 @@ public class Page2Cont: SKScene {
         self.nodeImage.run(repeatPulse, withKey: "pulse")
         self.addChild(nodeImage)
         informationLabel = SKLabelNode(text: "Swipe down until the heart is calmer and free from disease risks")
-        informationLabel.fontSize = 16
-        informationLabel.fontColor = .black
+        informationLabel.fontSize = 18
+        informationLabel.fontColor = .gray
         informationLabel.fontName = "BalooChettan-Regular"
+        let rangeX = SKRange(lowerLimit: 20, upperLimit: -(self.frame.width/2 + 20))
+        let rangeY = SKRange(lowerLimit: -(self.frame.height/3), upperLimit: -(self.frame.height/2))
+        let lockToCenter = SKConstraint.positionX(rangeX, y: rangeY)
+        informationLabel.constraints = [ lockToCenter ]
         informationLabel.verticalAlignmentMode = .center
         informationLabel.horizontalAlignmentMode = .center
-        informationLabel.position = CGPoint(x: 0, y: -self.frame.height/3)
+        informationLabel.position = CGPoint(x: self.frame.width/5 , y: -self.frame.height/3)
         self.addChild(informationLabel)
     }
     
@@ -105,10 +121,9 @@ public class Page2Cont: SKScene {
         var randomEdgeY: CGFloat = 0
         for i in 1..<20 {
             let texture = SKTexture(imageNamed: "virus")
-            //guard let nodeRandon = rects.randomElement() else {return}
             let virus = SKSpriteNode(texture: texture, size: CGSize(width: 30, height: 30))
-            //let posIni = randomPosition(inFrame: nodeRandon.frame)
             virus.name = "virus"
+            virus.zPosition = 3
             
             if i % 2 == 0 {
                 randomEdgeX = Int.random(in: 0..<2) == 0 ? -superview.frame.width/2 : superview.frame.width/2 // left or right
@@ -122,7 +137,7 @@ public class Page2Cont: SKScene {
                 virus.position = CGPoint(x: randomPropX, y: randomEdgeY*randomPropY)
             }
             let center = CGPoint(x: self.frame.midX, y: self.frame.midY)
-            let destAction = SKAction.move(to: center, duration: TimeInterval(Int.random(in: 30..<40)))
+            let destAction = SKAction.move(to: center, duration: TimeInterval(Int.random(in: 10..<20)))
             virus.run(destAction)
             virusArray.append(virus)
             self.addChild(virus)
@@ -159,12 +174,12 @@ public class Page2Cont: SKScene {
         self.addChild(cameraNode)
         self.camera = cameraNode
         informationLabel = SKLabelNode(text: "Swipe down until the heart is calmer and free from disease risks")
-        informationLabel.fontSize = 16
-        informationLabel.fontColor = .black
+        informationLabel.fontSize = 18
+        informationLabel.fontColor = .gray
         informationLabel.fontName = "BalooChettan-Regular"
         informationLabel.verticalAlignmentMode = .center
         informationLabel.horizontalAlignmentMode = .center
-        informationLabel.position = CGPoint(x: 0, y: -self.frame.height/3)
+        informationLabel.position = CGPoint(x: self.frame.width/5, y: -self.frame.height/3)
         self.addChild(informationLabel)
     }
 }
