@@ -48,7 +48,7 @@ func activateHypothalamus() {
  
  There are also processes of activation of connections between the neurotransmitters. **Dopamine** and **serotonin** are neurotransmitters activated by the embrace, but they have different functions: dopamine acts to give us a sense of pleasure, motivation and good humor, and serotonin helps to reduce anxiety and irritability.
  
- **Goal:** See what happens to our brains when we get a really good hug by typing in the correct commands
+ **Goal:** See what happens to our brain when we get a really good hug by typing in the correct commands
  
  1. Visit the brain to see what happens there 🧠
  2. Activate the brain region called hypothalamus

@@ -14,6 +14,7 @@ public class Page3Cont: SKScene {
     var nodeHypo: SKSpriteNode!
     let cameraNode = SKCameraNode()
     var hasEmoji = false
+    var createdHypo = false
     var delegatePresenting: PresentingProtocol!
     
     
@@ -29,12 +30,9 @@ public class Page3Cont: SKScene {
         var remove: [SKNode] = []
         for child in children {
             if !nodeImage.frame.contains(child.frame) {
-                child.run(SKAction.fadeOut(withDuration: 0.5))
-                remove.append(child)
+                child.removeFromParent()
             }
         }
-        
-        self.removeChildren(in: remove)
     }
     
     private func getSizeWith(scale: Bool) -> CGSize? {
@@ -44,7 +42,7 @@ public class Page3Cont: SKScene {
         if viewHeight > viewWidth {
             size = CGSize(width: (viewWidth * 0.7)/aux, height: (viewHeight * 0.5)/aux)
         }else{
-            size = CGSize(width: (viewWidth * 0.2)/aux, height: (viewHeight * 0.7)/aux)
+            size = CGSize(width: (viewWidth * 0.2)/aux, height: (viewHeight * 0.8)/aux)
         }
         return size
     }
@@ -73,6 +71,7 @@ public class Page3Cont: SKScene {
         guard let size = self.getSizeWith(scale: true) else {return}
         self.nodeImage = SKSpriteNode(texture: textute, size: size)
         self.nodeImage .position = CGPoint(x: 0, y: 0)
+        //self.nodeImage.setScale(0.5)
         self.nodeImage.run(SKAction.scale(by: 3, duration: 1))
         nodeImage.alpha = 1.0
         self.addChild(nodeImage)
@@ -100,10 +99,13 @@ public class Page3Cont: SKScene {
                 oxytocin.position = nodeHypo.position
                 let pos = randomPosition(inFrame: self.nodeImage.frame)
                 let move = SKAction.move(to:pos,duration:10)
-                let fadeOut = SKAction.fadeOut(withDuration: 5)
+                let fadeOut = SKAction.fadeOut(withDuration: 8)
                 //let score = SKAction.run({score += 1})
-                let seq = SKAction.group([move, fadeOut])
-                oxytocin.run(seq, withKey:"moving")
+                let group = SKAction.group([move, fadeOut])
+                let removed = SKAction.run {
+                    oxytocin.removeFromParent()
+                }
+                oxytocin.run(SKAction.sequence([group, removed]), withKey:"moving")
                 self.addChild(oxytocin)
                 
             }
@@ -116,17 +118,22 @@ public class Page3Cont: SKScene {
     }
     
     func activateHypothalamus(){
-        nodeHypo.run(SKAction.fadeIn(withDuration: 2.0))
-        let pulseUp = SKAction.scale(to: 1.2, duration: 1.0)
-        let pulseDown = SKAction.scale(to: 0.8, duration: 1.0)
-        let pulse = SKAction.sequence([pulseUp, pulseDown])
-        let repeatPulse = SKAction.repeatForever(pulse)
-        nodeHypo.run(repeatPulse)
+        if !createdHypo {
+            nodeHypo.run(SKAction.fadeIn(withDuration: 2.5))
+            let pulseUp = SKAction.scale(to: 1.3, duration: 1.0)
+            let pulseDown = SKAction.scale(to: 0.9, duration: 1.0)
+            let pulse = SKAction.sequence([pulseUp, pulseDown])
+            let repeatPulse = SKAction.repeatForever(pulse)
+            nodeHypo.run(repeatPulse)
+            createdHypo = true
+        }
     }
     
     func randomPosition(inFrame frame: CGRect) -> CGPoint{
-        let x = CGFloat.random(in: frame.minX+30..<frame.maxX-20)
-        let y = CGFloat.random(in: frame.minY+30..<frame.maxY-20)
+        let width = frame.width/3.3
+        let heigth = frame.height/2
+        let x = CGFloat.random(in: -width..<width)
+        let y = CGFloat.random(in: -heigth..<heigth)
        
         return CGPoint(x: x, y: y)
 //        let xPosition = CGFloat(arc4random_uniform(UInt32((nodeImage.frame.maxX) + 1)))
@@ -134,15 +141,15 @@ public class Page3Cont: SKScene {
 //        return CGPoint(x: xPosition, y: yPosition)
     }
     
-    private func addEmojis(){
+    func addEmojis(){
         hasEmoji = true
         for _ in 0...5 {
             let textute = SKTexture(imageNamed: "emoji\(Int.random(in: 3..<6))")
-            let emoji = SKSpriteNode(texture: textute, size: CGSize(width: 12, height:12))
-            let rect = CGRect(origin: nodeImage.frame.origin, size: CGSize(width: self.nodeImage.frame.width, height: self.nodeImage.frame.height))
-            emoji.position = randomPosition(inFrame: rect)
+            let emoji = SKSpriteNode(texture: textute, size: CGSize(width: 35, height:35))
+            emoji.position = randomPosition(inFrame: self.nodeImage.frame)
             emoji.zPosition = 2
-            nodeImage.addChild(emoji)
+            self.addChild(emoji)
+
         }
     }
     

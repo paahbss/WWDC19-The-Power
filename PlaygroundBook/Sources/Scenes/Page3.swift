@@ -35,7 +35,7 @@ public class Page3: SKScene {
         let textute = SKTexture(imageNamed: "people2")
         guard let size = self.getSize() else {return}
         self.nodeImage = SKSpriteNode(texture: textute, size: size)
-        self.nodeImage .position = CGPoint(x: 0, y: 0)
+        self.nodeImage.position = CGPoint(x: 0, y: 0)
         self.addChild(nodeImage)
         //configuring camera
         cameraNode.position = self.position
@@ -56,11 +56,11 @@ public class Page3: SKScene {
     
     func visitBrain(){
         let zoomInAction = SKAction.repeatForever(SKAction.scale(by: 0.4, duration: 1))
-        let moveByX = SKAction.moveTo(x: nodeImage.frame.midX + CGFloat(60), duration: 1)
-        let moveByY = SKAction.moveTo(y: nodeImage.frame.maxY - CGFloat(60), duration: 1)
+        let moveByX = SKAction.moveTo(x: nodeImage.frame.midX + CGFloat(50), duration: 1)
+        let moveByY = SKAction.moveTo(y: nodeImage.frame.maxY - CGFloat(65), duration: 1)
         cameraNode.run(SKAction.group([moveByX, moveByY, zoomInAction ]))
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3.9) {
             let scene = Page3Cont.init(size: self.size)
             scene.backgroundColor = SKColor(red: 99/255, green: 18/255, blue: 4/255, alpha: 1)
             guard let skview = self.view else {return}

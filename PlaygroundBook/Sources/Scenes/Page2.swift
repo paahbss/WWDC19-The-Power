@@ -19,7 +19,6 @@ class Page2: SKScene {
         initalSetup()
     }
     
-    
     func updatePosition(){
         nodeImage.removeFromParent()
         let textute = SKTexture(imageNamed: "people1")
