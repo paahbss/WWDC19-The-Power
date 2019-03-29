@@ -255,8 +255,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "83"
             endingLineNumber = "83"
-            landmarkName = "changeTo(scene:)"
-            landmarkType = "7">
+            landmarkName = "Page2ViewController"
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -351,7 +351,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "94"
             endingLineNumber = "94"
-            landmarkName = "updatePosition()"
+            landmarkName = "getSizeWith(scale:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

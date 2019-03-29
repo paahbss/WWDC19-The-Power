@@ -26,7 +26,7 @@ public class Page3ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
         scene.backgroundColor = SKColor(red: 255/255, green: 248/255, blue: 248/255, alpha: 1.0)
         skviewPage3.ignoresSiblingOrder = true
         skviewPage3.showsFPS = false
-        skviewPage3.showsNodeCount = true
+        skviewPage3.showsNodeCount = false
         skviewPage3.showsPhysics = false
         skviewPage3.presentScene(self.scene)
     }

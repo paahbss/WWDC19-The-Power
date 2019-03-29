@@ -52,9 +52,7 @@ public class Page2ViewController: UIViewController, PlaygroundLiveViewSafeAreaCo
         }
     }
     
-    @objc func callBack(){
-        
-    }
+
     
 }
 
@@ -71,7 +69,7 @@ extension Page2ViewController: PlaygroundLiveViewMessageHandler{
 
 extension Page2ViewController: PresentingProtocol {
     public func present(viewController: UIViewController) {
-        
+        self.present(viewController, animated: true, completion: nil)
     }
     
     public func dismiss(viewController: UIViewController) {

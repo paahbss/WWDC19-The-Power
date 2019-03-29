@@ -60,7 +60,6 @@ func strengthenImmuneSystem() {
 //#-editable-code Tap to write your code
 //#-end-editable-code
 //#-hidden-code
-
 //#-hidden-code
 if !sawLung {
     PlaygroundPage.current.assessmentStatus = .fail(hints: ["You did not enter the code."],

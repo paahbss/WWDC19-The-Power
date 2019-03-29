@@ -22,7 +22,7 @@ public class InformationViewController: UIViewController, PlaygroundLiveViewSafe
 
     let swipeDownLabel: UILabel = {
         let label = UILabel()
-        label.text = "Swipe down to close"
+        label.text = "Swipe down or tap to close"
         label.font = UIFont(name: "BalooChettan-Regular", size: 12)
         label.textColor = UIColor(red: 29/255, green: 38/255, blue: 49/255, alpha: 1.0)
         label.textAlignment = .center

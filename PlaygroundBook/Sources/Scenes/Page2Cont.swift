@@ -14,7 +14,8 @@ public class Page2Cont: SKScene {
     let cameraNode = SKCameraNode()
     var informationLabel: SKLabelNode!
     var virusArray: [SKSpriteNode] = []
-    var delegatePresenting: PresentingProtocol!
+    var delegateGoto: GotoProtocol!
+    
     
     
     override public func didMove(to view: SKView) {
@@ -37,7 +38,7 @@ public class Page2Cont: SKScene {
             let randomPropX = CGFloat.random(in: (-superview.frame.width/2)...(superview.frame.width/2))
             oxytocin.position = CGPoint(x: randomPropX, y: superview.frame.height/2)
             let center = CGPoint(x: oxytocin.position.x, y: -superview.frame.height/2)
-            let destAction = SKAction.move(to: center, duration: TimeInterval(Int.random(in: 10..<15)))
+            let destAction = SKAction.move(to: center, duration: TimeInterval(Int.random(in: 15..<25)))
             oxytocin.run(destAction) {
                 oxytocin.removeFromParent()
             }
@@ -52,26 +53,16 @@ public class Page2Cont: SKScene {
                 }
                 virusArray.remove(at: 0)
             }else{
-                informationLabel.fontSize = 18
-                informationLabel.fontColor = .gray
-                self.informationLabel.text = "Congratulation! due to the level of oxytocin released in the body the heart is calmer and more protected against diseases."
-
-                if #available(iOS 11.0, *) {
-                    self.informationLabel.numberOfLines = 0
-                    self.informationLabel.preferredMaxLayoutWidth = size.width
-                } else {
-                    // Fallback on earlier versions
-                }
-                
-                
-                
-                
+                let alert = UIAlertController(title: nil, message: "Congratulation! Due to the level of oxytocin released in the body the heart is calmer and more protected against diseases.", preferredStyle: UIAlertController.Style.alert)
+                let action = UIAlertAction(title: "Huuruu! 😁", style: UIAlertAction.Style.default, handler: nil)
+                alert.addAction(action)
+                self.delegateGoto.present(viewController: alert)
             }
         }
         let action = nodeImage.action(forKey: "pulse")
         guard let actionSpeed = action?.speed else {return}
         if Double(actionSpeed) >= 0.1 {
-            action?.speed -= 0.1
+            action?.speed -= 0.01
         }
     }
     
@@ -88,17 +79,13 @@ public class Page2Cont: SKScene {
         let repeatPulse = SKAction.repeatForever(pulse)
         self.nodeImage.run(repeatPulse, withKey: "pulse")
         self.addChild(nodeImage)
-        informationLabel = SKLabelNode(text: "Swipe down until the heart is calmer and free from disease risks")
-        informationLabel.fontSize = 18
+        informationLabel = SKLabelNode(text: "Swipe down until the heart is calmer and\r\nfree from disease risks")
+        informationLabel.fontSize = 15
         informationLabel.fontColor = .gray
         informationLabel.fontName = "BalooChettan-Regular"
-        let rangeX = SKRange(lowerLimit: 20, upperLimit: -(self.frame.width/2 + 20))
-        let rangeY = SKRange(lowerLimit: -(self.frame.height/3), upperLimit: -(self.frame.height/2))
-        let lockToCenter = SKConstraint.positionX(rangeX, y: rangeY)
-        informationLabel.constraints = [ lockToCenter ]
         informationLabel.verticalAlignmentMode = .center
         informationLabel.horizontalAlignmentMode = .center
-        informationLabel.position = CGPoint(x: self.frame.width/5 , y: -self.frame.height/3)
+        informationLabel.position = CGPoint(x: 10 , y: -self.frame.height/2.5)
         self.addChild(informationLabel)
     }
     
@@ -119,7 +106,7 @@ public class Page2Cont: SKScene {
         
         var randomEdgeX: CGFloat = 0
         var randomEdgeY: CGFloat = 0
-        for i in 1..<20 {
+        for i in 1..<50 {
             let texture = SKTexture(imageNamed: "virus")
             let virus = SKSpriteNode(texture: texture, size: CGSize(width: 30, height: 30))
             virus.name = "virus"
@@ -163,8 +150,8 @@ public class Page2Cont: SKScene {
         self.nodeImage = SKSpriteNode(texture: textute, size: size)
         self.nodeImage .position = CGPoint(x: 0, y: 0)
         self.nodeImage.run(SKAction.scale(by: 3, duration: 1))
-        let pulseUp = SKAction.scale(to: 1.2, duration: 0.2)
-        let pulseDown = SKAction.scale(to: 0.9, duration: 0.2)
+        let pulseUp = SKAction.scale(to: 1.2, duration: 0.3)
+        let pulseDown = SKAction.scale(to: 0.9, duration: 0.3)
         let pulse = SKAction.sequence([pulseUp, pulseDown])
         let repeatPulse = SKAction.repeatForever(pulse)
         self.nodeImage.run(repeatPulse, withKey: "pulse")
@@ -173,13 +160,13 @@ public class Page2Cont: SKScene {
         cameraNode.position = self.position
         self.addChild(cameraNode)
         self.camera = cameraNode
-        informationLabel = SKLabelNode(text: "Swipe down until the heart is calmer and free from disease risks")
-        informationLabel.fontSize = 18
+        informationLabel = SKLabelNode(text: "Swipe down until the heart is calmer and\r\nfree from disease risks")
+        informationLabel.fontSize = 15
         informationLabel.fontColor = .gray
         informationLabel.fontName = "BalooChettan-Regular"
         informationLabel.verticalAlignmentMode = .center
         informationLabel.horizontalAlignmentMode = .center
-        informationLabel.position = CGPoint(x: self.frame.width/5, y: -self.frame.height/3)
+        informationLabel.position = CGPoint(x: 10 , y: -self.frame.height/2.5)
         self.addChild(informationLabel)
     }
 }
@@ -206,7 +193,7 @@ extension SKAction {
         return change
     }
     
-    class func shake(duration:CGFloat, amplitudeX:Int = 3, amplitudeY:Int = 3) -> SKAction {
+    class func shake(duration:CGFloat, amplitudeX:Int = 4, amplitudeY:Int = 4) -> SKAction {
         let numberOfShakes = duration / 0.015 / 2.0
         var actionsArray:[SKAction] = []
         for _ in 1...Int(numberOfShakes) {

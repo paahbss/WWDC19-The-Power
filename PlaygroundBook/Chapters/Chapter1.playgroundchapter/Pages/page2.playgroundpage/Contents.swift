@@ -37,17 +37,15 @@ func visitHeart() {
  
  **Go ahead!**
  
-1. Use the ``visitHeart()`` command to visit heart 💜
+1. Use the ``visitHeart()`` command to visit the heart 💜
 2. **Swipe down** to released a hormone called oxytocin until the heart is calmer and free from disease risks
  
  [next page](@next)
  */
-
 //#-code-completion(everything, hide)
 //#-code-completion(identifier, show, visitHeart())
 //#-editable-code Tap to write your code
 //#-end-editable-code
-
 //#-hidden-code
 if !visited {
     PlaygroundPage.current.assessmentStatus = .fail(hints: ["You did not enter the code."],

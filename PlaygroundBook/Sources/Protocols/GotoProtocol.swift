@@ -8,6 +8,6 @@
 import Foundation
 import UIKit
 
-public protocol ImageProtocol {
-    func imageTouched(cgImage: CGImage)
+public protocol GotoProtocol {
+    func present(viewController: UIViewController)
 }

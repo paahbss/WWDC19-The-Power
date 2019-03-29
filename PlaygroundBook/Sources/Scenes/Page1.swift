@@ -17,7 +17,6 @@ public class Page1: SKScene {
     let marginSide: CGFloat = 20
     let spacingBetween: CGFloat = 30
     var delegatePresenting: PresentingProtocol!
-    var delegateImage: ImageProtocol!
     var isFirstClicked = true
     
     
